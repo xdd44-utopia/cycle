@@ -318,7 +318,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 622720943}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &34462591
 SpriteRenderer:
@@ -420,7 +420,7 @@ Transform:
   m_LocalScale: {x: 10, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 622720943}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &241328984
 SpriteRenderer:
@@ -485,7 +485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c24628b80a14d2485f06bf65c9e50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  littleElephant: {fileID: 985604720}
   isTop: 0
 --- !u!1 &253645458
 GameObject:
@@ -596,7 +595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309134053}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.73, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 622720943}
@@ -684,7 +683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7f64c98b862431faab9ce6db48e479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 309134056}
   eating: 0
 --- !u!1 &317603015
 GameObject:
@@ -835,7 +833,7 @@ Transform:
   - {fileID: 1469359136}
   - {fileID: 317603016}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622720942
 GameObject:
@@ -867,7 +865,6 @@ Transform:
   m_Children:
   - {fileID: 12596093}
   - {fileID: 309134054}
-  - {fileID: 985604722}
   - {fileID: 1798703155}
   - {fileID: 241328983}
   - {fileID: 34462590}
@@ -918,7 +915,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 622720943}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &783599829
 Animator:
@@ -1020,7 +1017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 622720943}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &842956777
 Animator:
@@ -1103,6 +1100,7 @@ GameObject:
   - component: {fileID: 895858635}
   - component: {fileID: 895858636}
   - component: {fileID: 895858637}
+  - component: {fileID: 895858638}
   m_Layer: 0
   m_Name: whitetree (3)
   m_TagString: WhiteTree
@@ -1201,6 +1199,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.73, y: 2.8}
   m_EdgeRadius: 0
+--- !u!114 &895858638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895858634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f595bd165a29e4408bcb94f9f34e211f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985604720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1222,7 @@ GameObject:
   - component: {fileID: 985604722}
   - component: {fileID: 985604721}
   - component: {fileID: 985604723}
+  - component: {fileID: 985604724}
   m_Layer: 0
   m_Name: LittleElephant
   m_TagString: Untagged
@@ -1238,7 +1249,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e51db1a927ee9420c8beb7d956b2ab6e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1258,9 +1269,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fc34724d34d9c4e33b0eae3348d98b9e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1278,11 +1289,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985604720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8, y: -2.5, z: 0}
+  m_LocalPosition: {x: -56.5, y: -1.5, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
-  m_Father: {fileID: 622720943}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &985604723
 Animator:
@@ -1303,6 +1314,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &985604724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985604720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03edf43a9bc4e415ea7cbffdf2ccee97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1212750782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1337,7 @@ GameObject:
   - component: {fileID: 1212750783}
   - component: {fileID: 1212750784}
   - component: {fileID: 1212750785}
+  - component: {fileID: 1212750786}
   m_Layer: 0
   m_Name: whitetree (5)
   m_TagString: WhiteTree
@@ -1412,6 +1436,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.74, y: 3.99}
   m_EdgeRadius: 0
+--- !u!114 &1212750786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212750782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f595bd165a29e4408bcb94f9f34e211f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1413086973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1577,7 @@ GameObject:
   - component: {fileID: 1498902860}
   - component: {fileID: 1498902861}
   - component: {fileID: 1498902862}
+  - component: {fileID: 1498902863}
   m_Layer: 0
   m_Name: whitetree (2)
   m_TagString: WhiteTree
@@ -1639,6 +1676,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 2.77}
   m_EdgeRadius: 0
+--- !u!114 &1498902863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498902859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f595bd165a29e4408bcb94f9f34e211f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1533787212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,7 +1800,7 @@ Transform:
   m_LocalScale: {x: 10, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 622720943}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1798703156
 SpriteRenderer:
@@ -1816,7 +1865,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c24628b80a14d2485f06bf65c9e50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  littleElephant: {fileID: 985604720}
   isTop: 1
 --- !u!1 &1957382060
 GameObject:
@@ -1829,6 +1877,7 @@ GameObject:
   - component: {fileID: 1957382061}
   - component: {fileID: 1957382062}
   - component: {fileID: 1957382063}
+  - component: {fileID: 1957382064}
   m_Layer: 0
   m_Name: whitetree (4)
   m_TagString: WhiteTree
@@ -1927,6 +1976,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.57, y: 4.25}
   m_EdgeRadius: 0
+--- !u!114 &1957382064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957382060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f595bd165a29e4408bcb94f9f34e211f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1981658145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,7 +2097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049940598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.3, y: 0, z: 0}
+  m_LocalPosition: {x: -37.8, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 317603016}

@@ -9,8 +9,8 @@ public class LittleElephantController : MonoBehaviour
 	private float life;
 	private const float decrease = 0.025f;
 	private const float increase = 0.4f;
-	private const float maxSpeed = 0.8f;
-	private const float minSpeed = 0.4f;
+	private const float maxSpeed = 0.9f;
+	private const float minSpeed = 0.6f;
 	private float speed = 1;
 	void Start() {
 		life = 1;

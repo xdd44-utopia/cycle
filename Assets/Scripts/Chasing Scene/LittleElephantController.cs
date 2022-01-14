@@ -26,9 +26,11 @@ public class LittleElephantController : MonoBehaviour
 		if (Mathf.Abs(elephant.transform.position.x - 4f - transform.position.x) < 0.5f) {
 			life += increase * Time.deltaTime;
 			life = life < maxSpeed ? life : maxSpeed;
+			anim.SetBool("Still", true);
 		}
 		else {
 			transform.position += new Vector3(life * speed * Time.deltaTime, 0, 0);
+			anim.SetBool("Still", false);
 		}
 	}
 

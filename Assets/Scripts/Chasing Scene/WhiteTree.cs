@@ -27,7 +27,7 @@ public class WhiteTree : MonoBehaviour
 	}
 
 	private void OnMouseDown() {
-		if (Mathf.Abs(elephant.transform.position.x + 5f - transform.position.x) < 1.5f && !isEaten) {
+		if (Mathf.Abs(elephant.transform.position.x + 4f - transform.position.x) < 2f && !isEaten) {
 			elephant.GetComponent<ElephantController>().eating = true;
 			isEaten = true;
 		}

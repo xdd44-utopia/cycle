@@ -6,6 +6,7 @@ public class SceneController : MonoBehaviour
 {
 	public static float speed = 1f;
 	public static bool switchScene;
+	public GameObject[] scene1objects;
 	private bool switching = false;
 	private int sceneID;
 	private GameObject elephant;
@@ -46,7 +47,10 @@ public class SceneController : MonoBehaviour
 	}
 
 	private void scene1to2() {
-
+		foreach (GameObject obj in scene1objects) {
+			obj.SetActive(false);
+		}
+		Camera.main.orthographic = true;
 	}
 
 	private void scene2() {

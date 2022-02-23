@@ -5,6 +5,7 @@ using UnityEngine;
 public class Success : MonoBehaviour
 {
 	public GameObject[] circles;
+	public GameObject controller;
 	private bool hasSucceeded = false;
 	// Start is called before the first frame update
 	void Start()
@@ -47,6 +48,7 @@ public class Success : MonoBehaviour
 
 	public void succeeded() {
 		this.GetComponent<Animator>().SetBool("Trigger", false);
+		controller.GetComponent<PuzzleController>().switchStates();
 		hasSucceeded = true;
 	}
 }

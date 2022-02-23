@@ -5,6 +5,7 @@ using UnityEngine;
 public class Success : MonoBehaviour
 {
 	public GameObject[] circles;
+	private bool hasSucceeded = false;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -14,14 +15,13 @@ public class Success : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!Input.GetMouseButton(0)&& checkSuccess())
+		if (!Input.GetMouseButton(0) && checkSuccess() && !hasSucceeded)
         {
-			Debug.Log("Success");
-			Destroy(this.gameObject);
+			this.GetComponent<Animator>().SetBool("Trigger", true);
 		}
 	}
     
-    public bool checkSuccess()
+    private bool checkSuccess()
 	{
 		bool Success = true;
 		foreach (GameObject g in circles)
@@ -43,5 +43,10 @@ public class Success : MonoBehaviour
             }
 		}
 		return Success;
+	}
+
+	public void succeeded() {
+		this.GetComponent<Animator>().SetBool("Trigger", false);
+		hasSucceeded = true;
 	}
 }

@@ -2,21 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class part1 : MonoBehaviour
+public class PuzzleComponent : MonoBehaviour
 {
     Vector3 mPrevPos = Vector3.zero;
-    public float speed = 10f;//旋转速度
+    private float correctSpeed = 0.1f;
+    private float correctAngleRange = 5f;
     private float prevAngle = 0;
-    // Start is called before the first frame update
     void Start()
     {
+
     }
 
-    // Update is called once per frame
     void Update()
     {
+        float angle = transform.rotation.eulerAngles.z;
         mPrevPos = Input.mousePosition;
-
+        if (angle > 0 && angle < correctAngleRange) {
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(angle, 0, correctSpeed));
+        }
+        if (angle - 360 < 0 && angle - 360 > -correctAngleRange) {
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(angle - 360, 0, correctSpeed));
+        }
     }
     private void OnMouseDown()
     {

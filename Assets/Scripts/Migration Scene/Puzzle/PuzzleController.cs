@@ -18,6 +18,7 @@ public class PuzzleController : MonoBehaviour
     }
 
     public void switchStates() {
+        Debug.Log("Triggered");
         foreach (Animator ani in animators) {
             ani.SetBool("Trigger", true);
         }

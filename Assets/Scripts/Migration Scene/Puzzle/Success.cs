@@ -6,6 +6,7 @@ public class Success : MonoBehaviour
 {
 	public GameObject[] circles;
 	public GameObject controller;
+	public GameObject prevArc;
 	public GameObject nextArc;
 	private bool hasSucceeded = false;
 	// Start is called before the first frame update
@@ -50,6 +51,7 @@ public class Success : MonoBehaviour
 	public void succeeded() {
 		this.GetComponent<Animator>().SetBool("Trigger", false);
 		controller.GetComponent<PuzzleController>().switchStates();
+		prevArc.GetComponent<ArcController>().switchStates();
 		nextArc.GetComponent<ArcController>().switchStates();
 		hasSucceeded = true;
 	}

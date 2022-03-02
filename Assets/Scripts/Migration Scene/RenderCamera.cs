@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RenderCamera : MonoBehaviour
 {
-	private float speed = 1f;
+	private float speed = 0.5f;
 	public float recurPos;
 	// Start is called before the first frame update
 	void Start()

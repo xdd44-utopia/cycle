@@ -6,6 +6,7 @@ public class ArcController : MonoBehaviour
 {
 
     public Animator[] animators;
+    public PuzzleController puzzle;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,10 @@ public class ArcController : MonoBehaviour
         foreach (Animator ani in animators) {
             ani.SetBool("Trigger", true);
         }
+    }
+
+    public void enablePuzzle() {
+        puzzle.switchStates();
     }
 
 

@@ -181,7 +181,7 @@ AnimationClip:
     - time: 2.8
       value: {fileID: 21300000, guid: 62b97c44c6ab4405e9246d79cc66cedc, type: 3}
     - time: 2.9
-      value: {fileID: 21300000, guid: f301c6fd893b2402581a70fe60f06002, type: 3}
+      value: {fileID: 21300000, guid: f798e1bcb69864af4973a0f1e9fe50a9, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -258,7 +258,7 @@ AnimationClip:
     - {fileID: 21300000, guid: 3c8ba7cc033ac461481962d7482c562c, type: 3}
     - {fileID: 21300000, guid: 81d42e9cf38b648edb90bca2d964facd, type: 3}
     - {fileID: 21300000, guid: 62b97c44c6ab4405e9246d79cc66cedc, type: 3}
-    - {fileID: 21300000, guid: f301c6fd893b2402581a70fe60f06002, type: 3}
+    - {fileID: 21300000, guid: f798e1bcb69864af4973a0f1e9fe50a9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -386,4 +386,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 2.9
+    functionName: disableTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3
+    functionName: enablePuzzle
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

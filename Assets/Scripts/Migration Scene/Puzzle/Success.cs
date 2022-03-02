@@ -49,6 +49,10 @@ public class Success : MonoBehaviour
 	}
 
 	public void succeeded() {
+		foreach (GameObject g in circles)
+		{
+			g.GetComponent<CircleCollider2D>().enabled = false;
+		}
 		this.GetComponent<Animator>().SetBool("Trigger", false);
 		controller.GetComponent<PuzzleController>().switchStates();
 		prevArc.GetComponent<ArcController>().switchStates();

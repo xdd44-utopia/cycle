@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 21290834}
   - component: {fileID: 21290833}
   - component: {fileID: 21290832}
+  - component: {fileID: 21290835}
   m_Layer: 0
   m_Name: whitetree (8)
   m_TagString: WhiteTree
@@ -328,6 +329,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &21290835
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21290830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3839656cee3c74020b97d6cfe062bd12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &33701449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1122,7 @@ GameObject:
   - component: {fileID: 489664380}
   - component: {fileID: 489664379}
   - component: {fileID: 489664378}
+  - component: {fileID: 489664381}
   m_Layer: 0
   m_Name: whitetree (5)
   m_TagString: WhiteTree
@@ -1212,6 +1233,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &489664381
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489664376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3839656cee3c74020b97d6cfe062bd12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &537310872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1381,7 @@ GameObject:
   - component: {fileID: 567208390}
   - component: {fileID: 567208389}
   - component: {fileID: 567208388}
+  - component: {fileID: 567208391}
   m_Layer: 0
   m_Name: whitetree (6)
   m_TagString: WhiteTree
@@ -1451,6 +1492,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &567208391
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567208386}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3839656cee3c74020b97d6cfe062bd12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &622720942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1786,7 @@ GameObject:
   - component: {fileID: 895858636}
   - component: {fileID: 895858637}
   - component: {fileID: 895858638}
+  - component: {fileID: 895858639}
   m_Layer: 0
   m_Name: whitetree (3)
   m_TagString: WhiteTree
@@ -1836,6 +1897,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f595bd165a29e4408bcb94f9f34e211f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &895858639
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895858634}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3839656cee3c74020b97d6cfe062bd12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &915630100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,6 +2125,7 @@ GameObject:
   - component: {fileID: 1080105925}
   - component: {fileID: 1080105924}
   - component: {fileID: 1080105923}
+  - component: {fileID: 1080105926}
   m_Layer: 0
   m_Name: whitetree (7)
   m_TagString: WhiteTree
@@ -2155,6 +2236,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1080105926
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080105921}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3839656cee3c74020b97d6cfe062bd12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1109362837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2471,7 @@ GameObject:
   - component: {fileID: 1498902861}
   - component: {fileID: 1498902862}
   - component: {fileID: 1498902863}
+  - component: {fileID: 1498902864}
   m_Layer: 0
   m_Name: whitetree (2)
   m_TagString: WhiteTree
@@ -2481,6 +2582,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f595bd165a29e4408bcb94f9f34e211f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1498902864
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498902859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3839656cee3c74020b97d6cfe062bd12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1533787212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +2791,7 @@ GameObject:
   - component: {fileID: 1957382062}
   - component: {fileID: 1957382063}
   - component: {fileID: 1957382064}
+  - component: {fileID: 1957382065}
   m_Layer: 0
   m_Name: whitetree (4)
   m_TagString: WhiteTree
@@ -2781,6 +2902,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f595bd165a29e4408bcb94f9f34e211f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1957382065
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957382060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3839656cee3c74020b97d6cfe062bd12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1981658145
 GameObject:
   m_ObjectHideFlags: 0

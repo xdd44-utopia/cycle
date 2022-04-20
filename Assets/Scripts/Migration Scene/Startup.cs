@@ -1,27 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Startup : MonoBehaviour
 {
-	public Animator[] anims;
+	private VideoPlayer videoPlayer;
 	public GameObject firstArc;
 	// Start is called before the first frame update
 	void Start()
 	{
-		
+		videoPlayer = GetComponent<VideoPlayer>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		
+		if (videoPlayer.frame == (long)(videoPlayer.frameCount - 1)) {
+			animFinished();
+		}
 	}
 
-	public void animFinished() {
-		foreach (Animator anim in anims) {
-			anim.SetBool("Trigger", true);
-		}
+	private void animFinished() {
 		firstArc.GetComponent<ArcController>().switchStates();
 		Destroy(this.gameObject);
 	}

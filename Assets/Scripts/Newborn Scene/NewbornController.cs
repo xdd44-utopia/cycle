@@ -48,6 +48,7 @@ public class NewbornController : MonoBehaviour
 
 	public void activate() {
 		videoPlayer.Play();
+		circleAnime.SetBool("Trigger", true);
 		Debug.Log("Activated!");
 	}
 }

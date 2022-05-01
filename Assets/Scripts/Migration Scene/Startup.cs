@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -20,7 +21,18 @@ public class Startup : MonoBehaviour
 	}
 
 	private void animFinished() {
-		firstArc.GetComponent<ArcController>().switchStates();
+		try {
+			firstArc.GetComponent<ArcController>().switchStates();
+		}
+		catch (NullReferenceException e) {
+
+		}
+		try {
+			firstArc.GetComponent<Arc5Controller>().switchStates();
+		}
+		catch (NullReferenceException e) {
+			
+		}
 		Destroy(this.gameObject);
 	}
 }

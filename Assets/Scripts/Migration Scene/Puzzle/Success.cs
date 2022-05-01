@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Success : MonoBehaviour
@@ -54,7 +55,18 @@ public class Success : MonoBehaviour
 		this.GetComponent<Animator>().SetBool("Trigger", false);
 		controller.GetComponent<PuzzleController>().switchStates();
 		prevArc.GetComponent<ArcController>().switchStates();
-		nextArc.GetComponent<ArcController>().switchStates();
+		try {
+			nextArc.GetComponent<ArcController>().switchStates();
+		}
+		catch (NullReferenceException e) {
+
+		}
+		try {
+			nextArc.GetComponent<Arc5Controller>().switchStates();
+		}
+		catch (NullReferenceException e) {
+
+		}
 		hasSucceeded = true;
 	}
 }

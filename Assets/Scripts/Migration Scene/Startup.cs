@@ -4,6 +4,7 @@ using UnityEngine.Video;
 
 public class Startup : MonoBehaviour
 {
+	public AudioManager audioManager;
 	private VideoPlayer videoPlayer;
 	public GameObject firstArc;
 	// Start is called before the first frame update
@@ -15,24 +16,14 @@ public class Startup : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (videoPlayer.frame == (long)(videoPlayer.frameCount - 1)) {
+		if (videoPlayer.frame > (long)(videoPlayer.frameCount - 5)) {
 			animFinished();
 		}
 	}
 
 	private void animFinished() {
-		try {
-			firstArc.GetComponent<ArcController>().switchStates();
-		}
-		catch (NullReferenceException e) {
-
-		}
-		try {
-			firstArc.GetComponent<Arc5Controller>().switchStates();
-		}
-		catch (NullReferenceException e) {
-			
-		}
+		firstArc.GetComponent<ArcController>().switchStates();
+		audioManager.playClip(1);
 		Destroy(this.gameObject);
 	}
 }

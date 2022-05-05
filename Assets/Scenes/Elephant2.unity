@@ -5214,7 +5214,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728462882}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 949abd666e1f964458c06c8b382609a3, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3d62a0ee81fae441db2ecb57abfe65cc, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -5236,7 +5236,7 @@ VideoPlayer:
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
+  m_SkipOnDrop: 0
   m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
@@ -5253,6 +5253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b53a8f1e1e834b1e92ca21332844ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 1989217258}
   firstArc: {fileID: 1110227391}
 --- !u!33 &728462887
 MeshFilter:
@@ -5415,7 +5416,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f72907c6bd9f948f0a0b4946ec4db1e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3906862efe0af44a2afad53546dd7ceb, type: 3}
   m_Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6028,7 +6029,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f72907c6bd9f948f0a0b4946ec4db1e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3906862efe0af44a2afad53546dd7ceb, type: 3}
   m_Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9820,6 +9821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b41f623a28bc764e85f3a6b85557433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 1989217258}
   mainCam: {fileID: 156160621}
   sceneCam: {fileID: 206099445}
   targetTexture: {fileID: 8400000, guid: 0c139fcb91b7849649badb62f45ae807, type: 2}
@@ -9898,7 +9900,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f72907c6bd9f948f0a0b4946ec4db1e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3906862efe0af44a2afad53546dd7ceb, type: 3}
   m_Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11250,7 +11252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f72907c6bd9f948f0a0b4946ec4db1e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3906862efe0af44a2afad53546dd7ceb, type: 3}
   m_Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14618,6 +14620,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1989217257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989217259}
+  - component: {fileID: 1989217258}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1989217258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989217257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1d48f098a8c4a148207fdf825a8109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 404dcdb4d4bb3499fadacbd4b1923477, type: 3}
+  - {fileID: 8300000, guid: 84356a1445edf4d43bb0aa1abc008643, type: 3}
+  - {fileID: 8300000, guid: 7c04454beba91450f8e6294255ff6c97, type: 3}
+  - {fileID: 8300000, guid: 41e45513245a74c099181edd72023b93, type: 3}
+--- !u!4 &1989217259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989217257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994680064
 GameObject:
   m_ObjectHideFlags: 0
@@ -15413,6 +15463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 9190230014995072928}
+  audioManager: {fileID: 1989217258}
   circleAnime: {fileID: 384678478}
 --- !u!4 &9190230014443736555
 Transform:
@@ -15485,7 +15536,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9190230014443736528}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 430a656465c11db49b3807bc50de1143, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: c23377df513b24720a584dffc243dc01, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

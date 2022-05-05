@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewbornCameraController : MonoBehaviour
 {
+	public AudioManager audioManager;
 	public Camera mainCam;
 	public Camera sceneCam;
 	public RenderTexture targetTexture;
@@ -40,6 +41,7 @@ public class NewbornCameraController : MonoBehaviour
 	}
 
 	public void startScene() {
+		audioManager.playClip(2);
 		started = true;
 		transform.position = new Vector3(0, 125, -10);
 	}

@@ -4,12 +4,14 @@ using UnityEngine.Video;
 public class NewbornController : MonoBehaviour
 {
 	public CircleController circle;
+	public AudioManager audioManager;
 	public Animator circleAnime;
 	private VideoPlayer videoPlayer;
 	private int[] st = new int[5]{4, 600, 875, 1225, 1500};
 	private int[] ed = new int[5]{50, 640, 900, 1265, 1545};
 	private int cur = -1;
 	private bool manual = false;
+	private bool isSwitched = false;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -40,6 +42,10 @@ public class NewbornController : MonoBehaviour
 				manual = true;
 				videoPlayer.Pause();
 			}
+		}
+		if (videoPlayer.frame > 1200 && !isSwitched) {
+			isSwitched = true;
+			audioManager.playClip(3);
 		}
 		if (videoPlayer.frame > 1880) {
 			circleAnime.SetBool("Trigger2", true);

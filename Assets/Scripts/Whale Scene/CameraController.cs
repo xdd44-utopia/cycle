@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Carema_Controller : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public bool isUseMoveOnScreenEdge = true;
     private float moveSpeed = 5f;

@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class AttractableController : MonoBehaviour
 {
+	public bool isCrab;
 
 	private SpriteRenderer origin = null;
 	private SpriteRenderer mirror = null;
 	private Vector3 targetPos;
 	private float targetDir;
 	private Vector3 defaultPos;
-	private float maxDir = 45f;
-
-	private float speed = 0.8f;
-	private float maxSpeed = 2.5f;
+	private const float maxDir = 45f;
+	private const float attractDist = 5f;
+	private const float speed = 0.8f;
+	private const float maxSpeed = 2f;
 
 	private GameObject attractMeat = null;
 	// Start is called before the first frame update
@@ -59,8 +60,13 @@ public class AttractableController : MonoBehaviour
 		if (attractMeat != null) {
 			return false;
 		}
-		attractMeat = meat;
-		targetPos = attractMeat.transform.position;
-		return true;
+		else if ((meat.transform.position - transform.position).magnitude < attractDist && (!isCrab || Mathf.Abs(meat.transform.position.y - transform.position.y) < 0.4f)) {
+			attractMeat = meat;
+			targetPos = attractMeat.transform.position;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }

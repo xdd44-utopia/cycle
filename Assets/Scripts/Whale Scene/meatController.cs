@@ -6,7 +6,6 @@ public class MeatController : MonoBehaviour
 {
 	private Vector3 selfScenePosition;
 	private bool hasAttracted = false;
-	private const float attractDist = 5f;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -24,8 +23,9 @@ public class MeatController : MonoBehaviour
 
 			GameObject[] attractables = GameObject.FindGameObjectsWithTag("Attractable");
 			foreach (GameObject attractable in attractables) {
-				if ((attractable.transform.position - transform.position).magnitude < attractDist) {
-					hasAttracted = attractable.GetComponent<AttractableController>().beAttracted(this.gameObject);
+				hasAttracted = attractable.GetComponent<AttractableController>().beAttracted(this.gameObject);
+				if (hasAttracted) {
+					break;
 				}
 			}
 		}

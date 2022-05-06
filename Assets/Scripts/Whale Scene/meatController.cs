@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeatController : MonoBehaviour
+public class meatController : MonoBehaviour
 {
 	private Vector3 selfScenePosition;
 	private bool hasAttracted = false;

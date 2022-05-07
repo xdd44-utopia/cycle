@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SceneBehavior : MonoBehaviour
 {
-	public SpriteBehavior[] sprites;
-	public AttractingController[] attractings;
 	public int target;
 	private int current;
     // Start is called before the first frame update
@@ -18,14 +16,20 @@ public class SceneBehavior : MonoBehaviour
     void Update()
     {
         if (current == target) {
-			foreach (SpriteBehavior sprite in sprites) {
-				sprite.destroyThis();
-			}
+			destroyAllSprites(this.GameObject);
 			foreach (AttractingController attracting in attractings) {
 				attracting.activate();
 			}
 		}
     }
+
+	private void destroyAllSprites(GameObject obj) {
+
+	}
+
+	private void activateAllAttracting(GameObject obj) {
+		
+	}
 
 	public void count() {
 		current++;

@@ -16,7 +16,7 @@ public class AttractableController : MonoBehaviour
 	private const float speed = 0.8f;
 	private const float maxSpeed = 5f;
 
-	private GameObject attractMeat = null;
+	private GameObject attracting = null;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -39,9 +39,14 @@ public class AttractableController : MonoBehaviour
 
 		if ((targetPos - transform.position).magnitude > 0.1f) {
 
-			if ((targetPos - transform.position).magnitude < 0.5f && attractMeat != null) {
-				Destroy(attractMeat);
-				attractMeat = null;
+			if ((targetPos - transform.position).magnitude < 0.5f && attracting != null) {
+				if (attracting.GetComponent<SpriteBehavior>() != null) {
+					attracting.GetComponent<SpriteBehavior>().destroyThis();
+				}
+				else {
+					Destroy(attracting);
+				}
+				attracting = null;
 				targetPos = defaultPos;
 			}
 
@@ -62,12 +67,12 @@ public class AttractableController : MonoBehaviour
 	}
 
 	public bool beAttracted(GameObject meat) {
-		if (attractMeat != null) {
+		if (attracting != null) {
 			return false;
 		}
 		else if ((meat.transform.position - transform.position).magnitude < attractDist && (!isCrab || Mathf.Abs(meat.transform.position.y - transform.position.y) < 0.4f)) {
-			attractMeat = meat;
-			targetPos = attractMeat.transform.position;
+			attracting = meat;
+			targetPos = attracting.transform.position;
 			return true;
 		}
 		else {
@@ -76,7 +81,7 @@ public class AttractableController : MonoBehaviour
 	}
 
 	public void beAttracted(Vector3 p) {
-		if (attractMeat == null) {
+		if (attracting == null) {
 			targetPos = p;
 		}
 	} 

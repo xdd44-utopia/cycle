@@ -19,8 +19,10 @@ public class SceneBehavior : MonoBehaviour
         if (current == target) {
 			target = -1;
 			destroyAllSprites(this.gameObject);
+			deactivateAllAttractable(this.gameObject);
 			if (nextScene != null) {
 				activateAllAttracting(nextScene);
+				activateAllAttractable(nextScene);
 			}
 		}
     }
@@ -34,6 +36,15 @@ public class SceneBehavior : MonoBehaviour
 			sprite.destroyThis();
 		}
 	}
+	private void deactivateAllAttractable(GameObject obj) {
+		for (int i=0;i<obj.transform.childCount;i++) {
+			deactivateAllAttractable(obj.transform.GetChild(i).gameObject);
+		}
+		AttractableController attractable = obj.GetComponent<AttractableController>();
+		if (attractable != null) {
+			attractable.deactivate();
+		}
+	}
 
 	private void activateAllAttracting(GameObject obj) {
 		for (int i=0;i<obj.transform.childCount;i++) {
@@ -43,7 +54,15 @@ public class SceneBehavior : MonoBehaviour
 		if (attracting != null) {
 			attracting.activate();
 		}
-		
+	}
+	private void activateAllAttractable(GameObject obj) {
+		for (int i=0;i<obj.transform.childCount;i++) {
+			activateAllAttractable(obj.transform.GetChild(i).gameObject);
+		}
+		AttractableController attractable = obj.GetComponent<AttractableController>();
+		if (attractable != null) {
+			attractable.activate();
+		}
 	}
 
 	public void count() {

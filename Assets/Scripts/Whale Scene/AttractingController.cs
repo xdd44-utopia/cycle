@@ -11,9 +11,7 @@ public class AttractingController : MonoBehaviour
 	// Start is called before the first frame update
 	protected virtual void Start()
 	{
-		GameObject targetObj = transform.parent.gameObject;
-		target = targetObj.GetComponent<AttractableController>();
-		transform.SetParent(targetObj.transform.parent);
+		
 	}
 
 	// Update is called once per frame
@@ -37,6 +35,10 @@ public class AttractingController : MonoBehaviour
 
 	public virtual void activate() {
 		target.beAttracted(transform.position);
+	}
+
+	public void setTarget(AttractableController tar) {
+		target = tar;
 	}
 
 

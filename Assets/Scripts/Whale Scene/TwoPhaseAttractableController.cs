@@ -45,7 +45,6 @@ public class TwoPhaseAttractableController : AttractableController
 		else if ((meat.transform.position - transform.position).magnitude < attractDist && (!isCrab || Mathf.Abs(meat.transform.position.y - transform.position.y) < 0.4f)) {
 			attracting = meat;
 			targetPos = attracting.transform.position;
-			defaultPos = targetPos;
 			hasAttracted = true;
 			return true;
 		}

@@ -8,81 +8,78 @@ public class AttractableController : MonoBehaviour
 
 	private SpriteRenderer origin = null;
 	private SpriteRenderer mirror = null;
-	private Vector3 targetPos;
+	protected Vector3 targetPos;
 	private float targetDir;
-	private Vector3 defaultPos;
+	protected Vector3 defaultPos;
+	private Vector3 deltaPos;
 	private const float maxDir = 45f;
-	private const float attractDist = 5f;
 	private const float speed = 0.8f;
 	private const float maxSpeed = 5f;
+	protected bool attractable;
+	public SceneBehavior scene;
 
-	private GameObject attracting = null;
 	// Start is called before the first frame update
-	void Start()
+	protected virtual void Start()
 	{
 		defaultPos = transform.position;
 		targetPos = transform.position;
 		targetDir = 0;
-		transform.position = new Vector3(-35, 15, 0);
+		attractable = true;
 	}
 
 	// Update is called once per frame
-	void Update()
+	protected virtual void Update()
 	{
-		if (this.gameObject.transform.childCount == 0) {
-			Destroy(this.gameObject);
-		}
-		if (origin == null || mirror == null) {
-			origin = this.gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
-			mirror = this.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
-		}
+		move();
+		adjustSprite();
+	}
+
+	private void move() {
 
 		if ((targetPos - transform.position).magnitude > 0.1f) {
 
-			if ((targetPos - transform.position).magnitude < 0.5f && attracting != null) {
-				if (attracting.GetComponent<SpriteBehavior>() != null) {
-					attracting.GetComponent<SpriteBehavior>().destroyThis();
-				}
-				else {
-					Destroy(attracting);
-				}
-				attracting = null;
-				targetPos = defaultPos;
-			}
-
-			Vector3 deltaPos = Vector3.Lerp(transform.position, targetPos, speed) - transform.position;
+			deltaPos = Vector3.Lerp(transform.position, targetPos, speed) - transform.position;
 			deltaPos = deltaPos.magnitude < maxSpeed ? deltaPos : deltaPos.normalized * maxSpeed;
 			transform.position += deltaPos * Time.deltaTime;
-
-			if (!isCrab) {
-				targetDir = Mathf.Clamp(Vector3.SignedAngle(new Vector3(deltaPos.x > 0 ? 1 : -1, 0, 0), deltaPos, new Vector3(0, 0, 1)), - maxDir, maxDir);
-				transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(transform.rotation.eulerAngles.z < 90 ? transform.rotation.eulerAngles.z : transform.rotation.eulerAngles.z - 360, targetDir, 0.5f));
-			}
-
-			origin.enabled = deltaPos.x >= 0;
-			mirror.enabled = deltaPos.x < 0;
 			
+		}
+		else {
+			if (targetPos != defaultPos) {
+				scene.count();
+				defaultPos = targetPos;
+			}
 		}
 
 	}
 
-	public bool beAttracted(GameObject meat) {
-		if (attracting != null) {
-			return false;
+	private void adjustSprite() {
+
+		if (!isCrab) {
+			targetDir = Mathf.Clamp(Vector3.SignedAngle(new Vector3(deltaPos.x > 0 ? 1 : -1, 0, 0), deltaPos, new Vector3(0, 0, 1)), - maxDir, maxDir);
+			transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(transform.rotation.eulerAngles.z < 90 ? transform.rotation.eulerAngles.z : transform.rotation.eulerAngles.z - 360, targetDir, 0.5f));
 		}
-		else if ((meat.transform.position - transform.position).magnitude < attractDist && (!isCrab || Mathf.Abs(meat.transform.position.y - transform.position.y) < 0.4f)) {
-			attracting = meat;
-			targetPos = attracting.transform.position;
+
+		if (this.gameObject.transform.childCount != 2) {
+			Destroy(this.gameObject);
+			return;
+		}
+		else if (origin == null || mirror == null) {
+			origin = this.gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+			mirror = this.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
+		}
+		origin.enabled = deltaPos.x >= 0;
+		mirror.enabled = deltaPos.x < 0;
+
+	}
+
+	public virtual bool beAttracted(Vector3 p) {
+		if (attractable) {
+			targetPos = p;
+			attractable = false;
 			return true;
 		}
 		else {
 			return false;
-		}
-	}
-
-	public void beAttracted(Vector3 p) {
-		if (attracting == null) {
-			targetPos = p;
 		}
 	} 
 }

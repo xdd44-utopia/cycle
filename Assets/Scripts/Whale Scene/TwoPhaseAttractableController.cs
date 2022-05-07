@@ -25,6 +25,7 @@ public class TwoPhaseAttractableController : AttractableController
 			else {
 				Destroy(attracting);
 			}
+			eatingTime = 4;
 			attracting = null;
 			attractable = true;
 		}

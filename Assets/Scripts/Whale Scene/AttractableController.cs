@@ -32,6 +32,7 @@ public class AttractableController : MonoBehaviour
 			GameObject attracting = transform.GetChild(2).gameObject;
 			attracting.GetComponent<AttractingController>().setTarget(this);
 			attracting.transform.SetParent(transform.parent);
+
 		}
 
 		defaultPos = transform.position;

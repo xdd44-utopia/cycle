@@ -42,11 +42,11 @@ public class CameraController : MonoBehaviour
 
             dir.y = MoveUp ? 1 : MoveDown ? -1 : 0;
             dir.x = MoveLeft ? -1 : MoveRight ? 1 : 0;
-            if ((transform.position.x <=-20.6 && dir.x==-1)|| (transform.position.x>=20.6&& dir.x==1))
+            if ((transform.position.x <=-13.5 && dir.x==-1)|| (transform.position.x>=13.5&& dir.x==1))
             {
                 dir.x = 0;
             }
-            if ((transform.position.y <= -9.85 && dir.y==-1)|| (transform.position.y >= 9.85 && dir.y==1))
+            if ((transform.position.y <= -5.8 && dir.y==-1)|| (transform.position.y >= 5.8 && dir.y==1))
             {
                 dir.y = 0;
             }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WhiteTree
   - Attractable
+  - Food
   layers:
   - Default
   - TransparentFX

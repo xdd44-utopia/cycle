@@ -5,8 +5,10 @@ using UnityEngine;
 public class SceneBehavior : MonoBehaviour
 {
 	public int target;
-	public GameObject nextScene;
+	public int cameraSize;
+	public SceneBehavior nextScene;
 	private int current;
+	private bool activated = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,11 @@ public class SceneBehavior : MonoBehaviour
 			destroyAllSprites(this.gameObject);
 			deactivateAllAttractable(this.gameObject);
 			if (nextScene != null) {
-				activateAllAttracting(nextScene);
-				activateAllAttractable(nextScene);
+				nextScene.activate();
 			}
+		}
+		if (activated && Camera.main.orthographicSize != cameraSize) {
+			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, cameraSize, 0.01f);
 		}
     }
 
@@ -44,6 +48,12 @@ public class SceneBehavior : MonoBehaviour
 		if (attractable != null) {
 			attractable.deactivate();
 		}
+	}
+
+	public void activate() {
+		activated = true;
+		activateAllAttracting(this.gameObject);
+		activateAllAttractable(this.gameObject);
 	}
 
 	private void activateAllAttracting(GameObject obj) {

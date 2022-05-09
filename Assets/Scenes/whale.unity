@@ -3276,7 +3276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11aa671502adee74a805ad16831eca87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: -1
+  target: 2
   nextScene: {fileID: 188513255}
 --- !u!1 &566604691
 GameObject:

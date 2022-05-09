@@ -34,5 +34,21 @@ public class OctopusController : MonoBehaviour
     public void backToidle()
     {
         ani.SetBool("isSwim", false);
+        ani.SetBool("isEat", false);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Food") //使用标签
+        {
+            //销毁食物预制体
+            Debug.Log("collider!");
+            Destroy(other.gameObject);
+            ani.SetBool("isEat", true);
+            if (!isCounted)
+            {
+                isCounted = true;
+                scene.count();
+            }
+        }
     }
 }

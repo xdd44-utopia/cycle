@@ -34,9 +34,10 @@ public class ScabbardfishController : MonoBehaviour
     public void backToidle()
     {
         ani.SetBool("isSwim", false);
+        ani.SetBool("isEat", false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Food") //使用标签
         {
@@ -44,6 +45,11 @@ public class ScabbardfishController : MonoBehaviour
             Debug.Log("collider!");
             Destroy(other.gameObject);
             ani.SetBool("isEat", true);
+            if (!isCounted)
+            {
+                isCounted = true;
+                scene.count();
+            }
         }
     }
 }

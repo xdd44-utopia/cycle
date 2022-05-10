@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,28 +32,17 @@ public class WormController : MonoBehaviour
 
 	void OnMouseDown() {
 
-		GameObject[] spawns = GameObject.FindGameObjectsWithTag("WormSpawn");
-		int temp = Random.Range(1, 5);
-		for (int t=0; t< temp; t++)
-        {
-			if (spawns.Length == 0)
-			{
-				return;
-			}
-			else
-			{
-				int mini = 0;
-				float minDist = 2147483647;
-				for (int i = 0; i < spawns.Length; i++)
-				{
-					if ((spawns[i].transform.position - transform.position).magnitude < minDist)
-					{
-						minDist = (spawns[i].transform.position - transform.position).magnitude;
-						mini = i;
-					}
-				}
-				spawns[mini].GetComponent<WormSpawnPoint>().spawn();
-			}
+		List<GameObject> spawns = GameObject.FindGameObjectsWithTag("WormSpawn").ToList();
+		if (spawns.Count == 0){
+			return;
+		}
+		spawns.Sort(delegate(GameObject s1, GameObject s2) {
+			float diff = (s1.transform.position - transform.position).magnitude - (s2.transform.position - transform.position).magnitude;
+			return diff == 0 ? 0 : (diff > 0 ? 1 : -1);
+		});
+		int pick = Random.Range(1, 5);
+		for (int i=0;i < pick && i < spawns.Count && (spawns[i].transform.position - transform.position).magnitude < 5;i++) {
+			spawns[i].GetComponent<WormSpawnPoint>().spawn();
 		}
 		
 	}

@@ -28,7 +28,7 @@ public class DraggableAttractingController : AttractingController {
 			//将屏幕坐标转换为世界坐标
 			Vector3 currentWorldPosition = Camera.main.ScreenToWorldPoint(currentScenePosition);
 			//设置对象位置为鼠标的世界位置
-			transform.position = currentWorldPosition;
+			transform.position = new Vector3(currentWorldPosition.x, currentWorldPosition.y, 0);
 
 			GameObject[] attractables = GameObject.FindGameObjectsWithTag("Attractable");
 			foreach (GameObject attractable in attractables) {

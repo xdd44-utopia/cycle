@@ -48,7 +48,6 @@ public class TwoPhaseAttractableController : AttractableController
 			hasAttracted = true;
 			return true;
 		}
-
 		else {
 			return false;
 		}

@@ -72,11 +72,14 @@ public class AttractableController : MonoBehaviour
 	private void move() {
 
 		if ((targetPos - transform.position).magnitude > 0.1f) {
-
 			deltaPos = Vector3.Lerp(transform.position, targetPos, speed) - transform.position;
 			deltaPos = deltaPos.magnitude < maxSpeed ? deltaPos : deltaPos.normalized * maxSpeed;
 			transform.position += deltaPos * Time.deltaTime;
-			
+		}
+		else {
+			if (!isEating()) {
+				wander();
+			}
 		}
 		
 		if (eatingTime <= 0) {
@@ -98,9 +101,6 @@ public class AttractableController : MonoBehaviour
 
 		if (!isCrab && (deltaPos.magnitude > 0.5f || isEating())) {
 			targetDir = Mathf.Clamp(Vector3.SignedAngle(new Vector3(deltaPos.x > 0 ? 1 : -1, 0, 0), deltaPos, new Vector3(0, 0, 1)), - maxDir, maxDir);
-		}
-		else {
-			targetDir = 0;
 		}
 		transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(transform.rotation.eulerAngles.z < 90 ? transform.rotation.eulerAngles.z : transform.rotation.eulerAngles.z - 360, targetDir, 0.02f));
 		
@@ -139,6 +139,16 @@ public class AttractableController : MonoBehaviour
 	public void deactivate() {
 		targetPos = hidePos;
 		eatingTime = 0;
+	}
+
+	private void wander() {
+		defaultPos += new Vector3(Random.Range(-10, 10), Random.Range(-2, 2), 0);
+		defaultPos = new Vector3(
+			Mathf.Clamp(defaultPos.x, -32, 32),
+			Mathf.Clamp(defaultPos.y, -16, 16),
+			0
+		);
+		targetPos = defaultPos;
 	}
 
 	private bool isEating() {

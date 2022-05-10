@@ -30,20 +30,30 @@ public class WormController : MonoBehaviour
 	}
 
 	void OnMouseDown() {
+
 		GameObject[] spawns = GameObject.FindGameObjectsWithTag("WormSpawn");
-		if (spawns.Length == 0) {
-			return;
-		}
-		else {
-			int mini = 0;
-			float minDist = 2147483647;
-			for (int i=0;i<spawns.Length;i++) {
-				if ((spawns[i].transform.position - transform.position).magnitude < minDist) {
-					minDist = (spawns[i].transform.position - transform.position).magnitude;
-					mini = i;
-				}
+		int temp = Random.Range(1, 5);
+		for (int t=0; t< temp; t++)
+        {
+			if (spawns.Length == 0)
+			{
+				return;
 			}
-			spawns[mini].GetComponent<WormSpawnPoint>().spawn();
+			else
+			{
+				int mini = 0;
+				float minDist = 2147483647;
+				for (int i = 0; i < spawns.Length; i++)
+				{
+					if ((spawns[i].transform.position - transform.position).magnitude < minDist)
+					{
+						minDist = (spawns[i].transform.position - transform.position).magnitude;
+						mini = i;
+					}
+				}
+				spawns[mini].GetComponent<WormSpawnPoint>().spawn();
+			}
 		}
+		
 	}
 }

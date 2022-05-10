@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class DragController : MonoBehaviour
 {
+    private float destroyTime = 3;
+    private float timer;
     private Vector3 selfScenePosition;
+    private bool isVanishing = false;
+    SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sprite = this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        if (isVanishing)
+        {
+            timer += Time.deltaTime;
+            if (timer > destroyTime)
+            {
+                Destroy(this.gameObject);
+            }
+            sprite.color = new Color(1, 1, 1, 1 - timer / destroyTime);
+        }
     }
     protected virtual void OnMouseDrag()
     {
@@ -23,6 +37,11 @@ public class DragController : MonoBehaviour
         Vector3 currentWorldPosition = Camera.main.ScreenToWorldPoint(currentScenePosition) - new Vector3(0, 0, Camera.main.transform.position.z);
         //设置对象位置为鼠标的世界位置
         transform.localPosition = currentWorldPosition;
+    }
+    protected virtual void OnMouseUp()
+    {
+        isVanishing = true;
+        timer = 0;
     }
 
 }

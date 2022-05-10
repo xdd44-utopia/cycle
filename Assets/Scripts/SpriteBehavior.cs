@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpriteBehavior : MonoBehaviour
 {
-	public float destroyTime;
+	private float destroyTime = 5;
 	private SpriteRenderer sprite;
 	private float timer;
 	private bool isVanishing = false;

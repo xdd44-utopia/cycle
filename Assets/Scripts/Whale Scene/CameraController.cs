@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public bool isUseMoveOnScreenEdge = true;
-    private float moveSpeed = 5f;
+    private float moveSpeed = 3f;
 
     private bool MoveUp;
     private bool MoveDown;

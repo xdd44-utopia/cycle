@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneBehavior : MonoBehaviour
 {
 	public int target;
-	public int cameraSize;
+	public float cameraSize;
 	public SceneBehavior nextScene;
 	private int current;
 	private bool activated = false;
@@ -54,6 +54,7 @@ public class SceneBehavior : MonoBehaviour
 		activated = true;
 		activateAllAttracting(this.gameObject);
 		activateAllAttractable(this.gameObject);
+		activateAllSpawn(this.gameObject);
 	}
 
 	private void activateAllAttracting(GameObject obj) {
@@ -74,6 +75,16 @@ public class SceneBehavior : MonoBehaviour
 			attractable.activate();
 		}
 	}
+	private void activateAllSpawn(GameObject obj) {
+		for (int i=0;i<obj.transform.childCount;i++) {
+			activateAllSpawn(obj.transform.GetChild(i).gameObject);
+		}
+		WormSpawnPoint spawn = obj.GetComponent<WormSpawnPoint>();
+		if (spawn != null) {
+			spawn.activate();
+		}
+	}
+
 
 	public void count() {
 		current++;

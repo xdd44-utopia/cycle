@@ -5,8 +5,10 @@ using UnityEngine;
 public class phase3AnimalController : MonoBehaviour
 {
 	public SceneBehavior scene;
+	public bool isSeaanemone;
 	private Animator anime;
 	private bool isCounted = false;
+	private bool isDeactivated = false;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -16,7 +18,9 @@ public class phase3AnimalController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+		if (isDeactivated && !isSeaanemone) {
+			transform.position += new Vector3(0, 0.1f, 0);
+		}
 	}
 	protected virtual void OnMouseDown()
 	{
@@ -39,10 +43,8 @@ public class phase3AnimalController : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Food") //使用标签
+		if (other.tag == "Food")
 		{
-			//销毁食物预制体
-			Debug.Log("collider!");
 			Destroy(other.gameObject);
 			anime.SetBool("isEat", true);
 			if (!isCounted)
@@ -51,5 +53,9 @@ public class phase3AnimalController : MonoBehaviour
 				scene.count();
 			}
 		}
+	}
+
+	public void deactivate() {
+		isDeactivated = true;
 	}
 }

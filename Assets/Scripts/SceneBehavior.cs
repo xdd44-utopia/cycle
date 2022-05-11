@@ -20,8 +20,7 @@ public class SceneBehavior : MonoBehaviour
     {
         if (current == target) {
 			target = -1;
-			destroyAllSprites(this.gameObject);
-			deactivateAllAttractable(this.gameObject);
+			deactivateRecursive(this.gameObject);
 			if (nextScene != null) {
 				nextScene.activate();
 			}
@@ -31,53 +30,22 @@ public class SceneBehavior : MonoBehaviour
 		}
     }
 
-	private void destroyAllSprites(GameObject obj) {
-		for (int i=0;i<obj.transform.childCount;i++) {
-			destroyAllSprites(obj.transform.GetChild(i).gameObject);
-		}
-		SpriteBehavior sprite = obj.GetComponent<SpriteBehavior>();
-		if (sprite != null) {
-			sprite.destroyThis();
-		}
-	}
-	private void deactivateAllAttractable(GameObject obj) {
-		for (int i=0;i<obj.transform.childCount;i++) {
-			deactivateAllAttractable(obj.transform.GetChild(i).gameObject);
-		}
-		AttractableController attractable = obj.GetComponent<AttractableController>();
-		if (attractable != null) {
-			attractable.deactivate();
-		}
-	}
-
 	public void activate() {
 		activated = true;
-		activateAllAttracting(this.gameObject);
-		activateAllAttractable(this.gameObject);
-		activateAllSpawn(this.gameObject);
+		activateRecursive(this.gameObject);
 	}
 
-	private void activateAllAttracting(GameObject obj) {
+	private void activateRecursive(GameObject obj) {
 		for (int i=0;i<obj.transform.childCount;i++) {
-			activateAllAttracting(obj.transform.GetChild(i).gameObject);
+			activateRecursive(obj.transform.GetChild(i).gameObject);
 		}
 		DraggableAttractingController attracting = obj.GetComponent<DraggableAttractingController>();
 		if (attracting != null) {
 			attracting.activate();
 		}
-	}
-	private void activateAllAttractable(GameObject obj) {
-		for (int i=0;i<obj.transform.childCount;i++) {
-			activateAllAttractable(obj.transform.GetChild(i).gameObject);
-		}
 		AttractableController attractable = obj.GetComponent<AttractableController>();
 		if (attractable != null) {
 			attractable.activate();
-		}
-	}
-	private void activateAllSpawn(GameObject obj) {
-		for (int i=0;i<obj.transform.childCount;i++) {
-			activateAllSpawn(obj.transform.GetChild(i).gameObject);
 		}
 		WormSpawnPoint spawn = obj.GetComponent<WormSpawnPoint>();
 		if (spawn != null) {
@@ -85,7 +53,23 @@ public class SceneBehavior : MonoBehaviour
 		}
 	}
 
-
+	private void deactivateRecursive(GameObject obj) {
+		for (int i=0;i<obj.transform.childCount;i++) {
+			deactivateRecursive(obj.transform.GetChild(i).gameObject);
+		}
+		SpriteBehavior sprite = obj.GetComponent<SpriteBehavior>();
+		if (sprite != null) {
+			sprite.destroyThis();
+		}
+		AttractableController attractable = obj.GetComponent<AttractableController>();
+		if (attractable != null) {
+			attractable.deactivate();
+		}
+		phase3AnimalController animal = obj.GetComponent<phase3AnimalController>();
+		if (animal != null) {
+			animal.deactivate();
+		}
+	}
 	public void count() {
 		current++;
 	}

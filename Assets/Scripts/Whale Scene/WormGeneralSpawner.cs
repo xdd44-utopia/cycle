@@ -17,7 +17,7 @@ public class WormGeneralSpawner : MonoBehaviour
 		timer += Time.deltaTime;
 		if (timer > 5) {
 			GameObject[] spawns = GameObject.FindGameObjectsWithTag("WormSpawn");
-			if (spawns.Length < 10) {
+			if (spawns.Length < 50) {
 				scene.count();
 				Destroy(this.gameObject);
 				return;

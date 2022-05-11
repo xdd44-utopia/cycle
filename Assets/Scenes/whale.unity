@@ -287,6 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &2861768
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2316,6 +2317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &63961915
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4944,6 +4946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &166153258
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6518,6 +6521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &228617200
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8687,6 +8691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &269301107
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9382,6 +9387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 1
 --- !u!60 &296731219
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9957,7 +9963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: 0
   cameraSize: 13
-  nextScene: {fileID: 393166712}
+  nextScene: {fileID: 543037254}
 --- !u!1 &305479577
 GameObject:
   m_ObjectHideFlags: 0
@@ -9970,7 +9976,7 @@ GameObject:
   - component: {fileID: 305479579}
   m_Layer: 0
   m_Name: SpiderCrab2
-  m_TagString: Untagged
+  m_TagString: Attractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11845,6 +11851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &370108753
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12473,7 +12480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &393166711
 Transform:
   m_ObjectHideFlags: 0
@@ -13616,6 +13623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &429462286
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13885,6 +13893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &431652979
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15721,6 +15730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &501069786
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16778,6 +16788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 1
 --- !u!114 &520674295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17639,7 +17650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547767790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2200003, y: -19.95, z: 1}
+  m_LocalPosition: {x: 1.31, y: -20.31, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1735826171}
@@ -17671,13 +17682,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.4181018}
-      - {x: -1.1811466, y: -0.2360459}
-      - {x: -3.0271177, y: -0.58696723}
-      - {x: -3.2757382, y: -1.3553494}
-      - {x: -2.4348469, y: -0.825853}
-      - {x: 0.02743876, y: -0.16246295}
-      - {x: 2.8476133, y: 1.4728138}
+    - - {x: 2.2493973, y: 0.46922445}
+      - {x: 1.7584066, y: 0.14737415}
+      - {x: -0.062003136, y: -0.35691524}
+      - {x: -0.3617463, y: -1.0741748}
+      - {x: 0.8114424, y: -0.36574888}
+      - {x: 2.4557652, y: 0.042027652}
+      - {x: 3.26857, y: 0.58111006}
+      - {x: 5.736047, y: 1.9329181}
 --- !u!114 &547767793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19703,6 +19715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!114 &624496985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22035,6 +22048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &689935443
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24796,6 +24810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &798529865
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25271,6 +25286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &824873794
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25627,7 +25643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &835087692
 Transform:
   m_ObjectHideFlags: 0
@@ -27139,6 +27155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &884253901
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -27784,6 +27801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 1
 --- !u!60 &893236595
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -29736,6 +29754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1002249090
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -30128,6 +30147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 1
 --- !u!60 &1005809464
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31078,6 +31098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &1037632081
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31347,6 +31368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1040189493
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31926,6 +31948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 1
 --- !u!60 &1049768335
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -33466,6 +33489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &1097576626
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -33898,6 +33922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &1103127376
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -35009,6 +35034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1127778062
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -37372,6 +37398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1214295041
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -38220,6 +38247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1227895694
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -38462,6 +38490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1228715663
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -39905,6 +39934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 1
 --- !u!60 &1289002365
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -41588,6 +41618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &1345214252
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -43083,6 +43114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1419843983
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -45309,6 +45341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1511907832
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -47400,6 +47433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!114 &1561059316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51290,6 +51324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &1712023333
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -51977,7 +52012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735826170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.9100003, y: 0.3599987, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 547767791}
@@ -53987,6 +54022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!60 &1781190598
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -55221,6 +55257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 0
+  isOctopus: 0
 --- !u!60 &1853725420
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -58128,6 +58165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 543037254}
   isSeaanemone: 1
+  isOctopus: 0
 --- !u!114 &1963569120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59405,7 +59443,7 @@ GameObject:
   - component: {fileID: 2024487149}
   m_Layer: 0
   m_Name: SpiderCrab1
-  m_TagString: Untagged
+  m_TagString: Attractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

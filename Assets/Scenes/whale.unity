@@ -5962,7 +5962,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &188513255
 GameObject:
   m_ObjectHideFlags: 0
@@ -10014,7 +10013,6 @@ MonoBehaviour:
   isCrab: 1
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 1
 --- !u!1 &322479512
 GameObject:
   m_ObjectHideFlags: 0
@@ -11528,7 +11526,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &365838111
 GameObject:
   m_ObjectHideFlags: 0
@@ -14856,7 +14853,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &464166613
 GameObject:
   m_ObjectHideFlags: 0
@@ -24158,7 +24154,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &780784289
 GameObject:
   m_ObjectHideFlags: 0
@@ -25100,7 +25095,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &801957003
 GameObject:
   m_ObjectHideFlags: 0
@@ -26003,7 +25997,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &842762236
 GameObject:
   m_ObjectHideFlags: 0
@@ -28599,7 +28592,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &953954102
 GameObject:
   m_ObjectHideFlags: 0
@@ -31891,7 +31883,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &1049768331
 GameObject:
   m_ObjectHideFlags: 0
@@ -32556,7 +32547,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &1054990479
 GameObject:
   m_ObjectHideFlags: 0
@@ -39015,7 +39005,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &1237457436
 GameObject:
   m_ObjectHideFlags: 0
@@ -39880,7 +39869,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &1289002361
 GameObject:
   m_ObjectHideFlags: 0
@@ -46372,7 +46360,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &1538354856
 GameObject:
   m_ObjectHideFlags: 0
@@ -51603,7 +51590,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &1722750400
 GameObject:
   m_ObjectHideFlags: 0
@@ -54551,7 +54537,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &1806653334
 GameObject:
   m_ObjectHideFlags: 0
@@ -56139,7 +56124,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &1887628584
 GameObject:
   m_ObjectHideFlags: 0
@@ -59475,7 +59459,6 @@ MonoBehaviour:
   isCrab: 1
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 1
 --- !u!4 &2024487151
 Transform:
   m_ObjectHideFlags: 0
@@ -59590,7 +59573,6 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
-  isSpiderCrab: 0
 --- !u!1 &2030253720
 GameObject:
   m_ObjectHideFlags: 0

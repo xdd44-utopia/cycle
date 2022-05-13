@@ -23,7 +23,6 @@ public class AttractableController : MonoBehaviour
 	private const float maxSpeed = 5f;
 	protected bool attractable;
 	public SceneBehavior scene;
-
 	// Start is called before the first frame update
 	protected virtual void Start()
 	{
@@ -60,7 +59,16 @@ public class AttractableController : MonoBehaviour
 			Destroy(this.gameObject);
 			return;
 		}
-		
+		if (origin == null || mirror == null)
+		{
+			origin = this.gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+			originAnim = this.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+			mirror = this.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
+			mirrorAnim = this.gameObject.transform.GetChild(1).gameObject.GetComponent<Animator>();
+			originOffset = this.gameObject.transform.GetChild(0).transform.localPosition;
+			mirrorOffset = this.gameObject.transform.GetChild(1).transform.localPosition;
+		}
+
 		move();
 		adjustSprite();
 
@@ -72,11 +80,21 @@ public class AttractableController : MonoBehaviour
 	private void move() {
 
 		if ((targetPos - transform.position).magnitude > 0.1f) {
+            if (isCrab)
+            {
+				originAnim.SetBool("isWalk", true);
+				mirrorAnim.SetBool("isWalk", true);
+			}
 			deltaPos = Vector3.Lerp(transform.position, targetPos, speed) - transform.position;
 			deltaPos = deltaPos.magnitude < maxSpeed ? deltaPos : deltaPos.normalized * maxSpeed;
 			transform.position += deltaPos * Time.deltaTime;
 		}
 		else {
+			if (isCrab)
+			{
+				originAnim.SetBool("isWalk", false);
+				mirrorAnim.SetBool("isWalk", false);
+			}
 			if (!isEating()) {
 				wander();
 			}
@@ -104,14 +122,6 @@ public class AttractableController : MonoBehaviour
 		}
 		transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(transform.rotation.eulerAngles.z < 90 ? transform.rotation.eulerAngles.z : transform.rotation.eulerAngles.z - 360, targetDir, 0.02f));
 		
-		if (origin == null || mirror == null) {
-			origin = this.gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
-			originAnim = this.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
-			mirror = this.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
-			mirrorAnim = this.gameObject.transform.GetChild(1).gameObject.GetComponent<Animator>();
-			originOffset = this.gameObject.transform.GetChild(0).transform.localPosition;
-			mirrorOffset = this.gameObject.transform.GetChild(1).transform.localPosition;
-		}
 
 		this.gameObject.transform.GetChild(0).transform.localPosition = isEating() ? originOffset : new Vector3(0, 0, 0);
 		this.gameObject.transform.GetChild(1).transform.localPosition = isEating() ? mirrorOffset : new Vector3(0, 0, 0);
@@ -142,7 +152,14 @@ public class AttractableController : MonoBehaviour
 	}
 
 	private void wander() {
-		defaultPos += new Vector3(Random.Range(-10, 10), Random.Range(-2, 2), 0);
+        if (isCrab)
+        {
+			defaultPos += new Vector3(Random.Range(-10, 10), 0, 0);
+		}
+        else
+        {
+			defaultPos += new Vector3(Random.Range(-10, 10), Random.Range(-2, 2), 0);
+		}
 		defaultPos = new Vector3(
 			Mathf.Clamp(defaultPos.x, -32, 32),
 			Mathf.Clamp(defaultPos.y, -16, 16),
@@ -153,15 +170,5 @@ public class AttractableController : MonoBehaviour
 
 	private bool isEating() {
 		return (targetPos != defaultPos && targetPos != hidePos) || eatingTime > 0;
-	}
-	public void startWalking()
-    {
-		originAnim.SetBool("isWalk",true);
-		mirrorAnim.SetBool("isWalk", true);
-	}
-    public void stopWalking()
-    {
-		originAnim.SetBool("isWalk", false);
-		mirrorAnim.SetBool("isWalk", false);
 	}
 }

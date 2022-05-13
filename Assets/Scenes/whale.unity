@@ -5939,7 +5939,7 @@ Transform:
   m_GameObject: {fileID: 188142997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.5, y: -0.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1729207404}
   - {fileID: 357973780}
@@ -5962,6 +5962,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &188513255
 GameObject:
   m_ObjectHideFlags: 0
@@ -9989,8 +9990,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305479577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.099998, y: -13.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -19.8, y: -11.1, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1657837789}
   - {fileID: 337987700}
@@ -10013,6 +10014,7 @@ MonoBehaviour:
   isCrab: 1
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 1
 --- !u!1 &322479512
 GameObject:
   m_ObjectHideFlags: 0
@@ -11503,7 +11505,7 @@ Transform:
   m_GameObject: {fileID: 365715829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 21.82, y: 5.999999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 958981419}
   - {fileID: 1519393812}
@@ -11526,6 +11528,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &365838111
 GameObject:
   m_ObjectHideFlags: 0
@@ -12480,7 +12483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &393166711
 Transform:
   m_ObjectHideFlags: 0
@@ -14830,7 +14833,7 @@ Transform:
   m_GameObject: {fileID: 463331921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29.5, y: 11.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 2139843459}
   - {fileID: 2088264612}
@@ -14853,6 +14856,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &464166613
 GameObject:
   m_ObjectHideFlags: 0
@@ -17650,7 +17654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547767790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.31, y: -20.31, z: 1}
+  m_LocalPosition: {x: 1.51, y: -21.64, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1735826171}
@@ -17682,14 +17686,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.2493973, y: 0.46922445}
-      - {x: 1.7584066, y: 0.14737415}
-      - {x: -0.062003136, y: -0.35691524}
-      - {x: -0.3617463, y: -1.0741748}
-      - {x: 0.8114424, y: -0.36574888}
-      - {x: 2.4557652, y: 0.042027652}
-      - {x: 3.26857, y: 0.58111006}
-      - {x: 5.736047, y: 1.9329181}
+    - - {x: 2.9398594, y: 1.2300439}
+      - {x: 5.4932213, y: 2.2729793}
+      - {x: 6.4750624, y: 3.2169075}
+      - {x: 0.37133884, y: 1.0715823}
+      - {x: 0.101113796, y: 0.19869006}
+      - {x: 0.75358486, y: 0.5310421}
+      - {x: 1.5179949, y: 0.71631527}
 --- !u!114 &547767793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18017,7 +18020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566604691}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.91, y: 2.460001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 728945109}
@@ -22597,7 +22600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728945108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.53, y: -13.91, z: 1}
+  m_LocalPosition: {x: 20.7, y: -16.44, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 566604692}
@@ -22629,14 +22632,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.397028, y: 1.7858291}
-      - {x: -1.2129984, y: 0.0034168065}
-      - {x: -2.738628, y: 0.12915182}
-      - {x: -4.9971585, y: -2.555304}
-      - {x: -2.8012877, y: -0.8664222}
-      - {x: -1.2624202, y: -0.537817}
-      - {x: 1.1553284, y: 1.1118987}
-      - {x: 4.836545, y: 2.3172464}
+    - - {x: 5.5338364, y: 4.2447715}
+      - {x: 9.612788, y: 4.7944174}
+      - {x: 0.19841194, y: -0.02313304}
+      - {x: -0.07927275, y: -0.096361876}
+      - {x: 1.6826658, y: 2.6050258}
 --- !u!114 &728945112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22678,8 +22678,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734024647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.14, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.5, y: 0, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 684876142}
   m_RootOrder: 0
@@ -22748,7 +22748,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.96, y: 1.47}
+  m_Size: {x: 9.7, y: 2.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -24135,7 +24135,7 @@ Transform:
   m_GameObject: {fileID: 777422067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -26.5, y: 9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 759818999}
   - {fileID: 734328096}
@@ -24158,6 +24158,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &780784289
 GameObject:
   m_ObjectHideFlags: 0
@@ -24185,8 +24186,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780784289}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 5.14, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.5, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1627144318}
   m_RootOrder: 1
@@ -24255,7 +24256,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.96, y: 1.47}
+  m_Size: {x: 9.7, y: 2.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -25076,7 +25077,7 @@ Transform:
   m_GameObject: {fileID: 800869327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 26.5, y: -13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 2030253721}
   - {fileID: 1963393234}
@@ -25099,6 +25100,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &801957003
 GameObject:
   m_ObjectHideFlags: 0
@@ -25643,7 +25645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &835087692
 Transform:
   m_ObjectHideFlags: 0
@@ -25978,7 +25980,7 @@ Transform:
   m_GameObject: {fileID: 842398606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.9, y: 9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1924305757}
   - {fileID: 298502266}
@@ -26001,6 +26003,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &842762236
 GameObject:
   m_ObjectHideFlags: 0
@@ -28573,7 +28576,7 @@ Transform:
   m_GameObject: {fileID: 952232243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 17.4, y: 14, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1853736864}
   - {fileID: 1653090317}
@@ -28596,6 +28599,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &953954102
 GameObject:
   m_ObjectHideFlags: 0
@@ -30452,8 +30456,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007388349}
   m_LocalRotation: {x: 0, y: 0, z: 0.20526476, w: 0.9787065}
-  m_LocalPosition: {x: -6.57, y: 2.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -10, y: 2.23, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1100750386}
   m_RootOrder: 0
@@ -30517,12 +30521,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: dd0b74706294e425498b5adac6a4fb37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d1f3245789e6456d97865efc2c1e61c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.96, y: 1.47}
+  m_Size: {x: 10.72, y: 8.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -31864,7 +31868,7 @@ Transform:
   m_GameObject: {fileID: 1047645646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -26.1, y: 12.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1309660957}
   - {fileID: 1881866671}
@@ -31887,6 +31891,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &1049768331
 GameObject:
   m_ObjectHideFlags: 0
@@ -32528,7 +32533,7 @@ Transform:
   m_GameObject: {fileID: 1054631376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29.6, y: -5.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 129857569}
   - {fileID: 1750755594}
@@ -32551,6 +32556,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &1054990479
 GameObject:
   m_ObjectHideFlags: 0
@@ -32979,8 +32985,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084186315}
   m_LocalRotation: {x: 0, y: 0, z: 0.20526476, w: 0.9787065}
-  m_LocalPosition: {x: -6.57, y: 2.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.5, y: 2.23, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1138153357}
   m_RootOrder: 0
@@ -33044,12 +33050,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: dd0b74706294e425498b5adac6a4fb37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d1f3245789e6456d97865efc2c1e61c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.96, y: 1.47}
+  m_Size: {x: 10.72, y: 8.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38986,7 +38992,7 @@ Transform:
   m_GameObject: {fileID: 1233411550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -23.390001, y: 6.2699995, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1120364475}
   - {fileID: 770302}
@@ -39009,6 +39015,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &1237457436
 GameObject:
   m_ObjectHideFlags: 0
@@ -39174,8 +39181,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256751697}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 5.14, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.5, y: 0, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 684876142}
   m_RootOrder: 1
@@ -39244,7 +39251,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.96, y: 1.47}
+  m_Size: {x: 9.7, y: 2.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -39524,8 +39531,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264193388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.14, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.5, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1627144318}
   m_RootOrder: 0
@@ -39594,7 +39601,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.96, y: 1.47}
+  m_Size: {x: 9.7, y: 2.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -39639,8 +39646,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277355992}
   m_LocalRotation: {x: 0.20526476, y: 0.9787065, z: 0, w: 0}
-  m_LocalPosition: {x: 6.57, y: 2.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 8.5, y: 2.23, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1138153357}
   m_RootOrder: 1
@@ -39704,12 +39711,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: dd0b74706294e425498b5adac6a4fb37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d1f3245789e6456d97865efc2c1e61c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.96, y: 1.47}
+  m_Size: {x: 10.72, y: 8.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -39850,7 +39857,7 @@ Transform:
   m_GameObject: {fileID: 1285455179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.3, y: 12.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1772758456}
   - {fileID: 418082207}
@@ -39873,6 +39880,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &1289002361
 GameObject:
   m_ObjectHideFlags: 0
@@ -45815,8 +45823,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520358661}
   m_LocalRotation: {x: 0.20526476, y: 0.9787065, z: 0, w: 0}
-  m_LocalPosition: {x: 6.57, y: 2.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10, y: 2.23, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1100750386}
   m_RootOrder: 1
@@ -45880,12 +45888,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: dd0b74706294e425498b5adac6a4fb37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d1f3245789e6456d97865efc2c1e61c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.96, y: 1.47}
+  m_Size: {x: 10.72, y: 8.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -46341,7 +46349,7 @@ Transform:
   m_GameObject: {fileID: 1532527090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 9.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 657073354}
   - {fileID: 1067802001}
@@ -46364,6 +46372,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &1538354856
 GameObject:
   m_ObjectHideFlags: 0
@@ -51571,7 +51580,7 @@ Transform:
   m_GameObject: {fileID: 1718539341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29, y: 3.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1474484970}
   - {fileID: 885521851}
@@ -51594,6 +51603,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &1722750400
 GameObject:
   m_ObjectHideFlags: 0
@@ -52012,7 +52022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735826170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9100003, y: 0.3599987, z: 0}
+  m_LocalPosition: {x: 3.4, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 547767791}
@@ -54518,7 +54528,7 @@ Transform:
   m_GameObject: {fileID: 1797604943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.87, y: 6.87, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 2048252026}
   - {fileID: 1357549803}
@@ -54541,6 +54551,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &1806653334
 GameObject:
   m_ObjectHideFlags: 0
@@ -56105,7 +56116,7 @@ Transform:
   m_GameObject: {fileID: 1881989688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15, y: 15.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1465726588}
   - {fileID: 1679746253}
@@ -56128,6 +56139,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &1887628584
 GameObject:
   m_ObjectHideFlags: 0
@@ -56705,7 +56717,7 @@ Transform:
   m_GameObject: {fileID: 1913296026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 89116911}
   - {fileID: 1168112631}
@@ -59463,6 +59475,7 @@ MonoBehaviour:
   isCrab: 1
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 1
 --- !u!4 &2024487151
 Transform:
   m_ObjectHideFlags: 0
@@ -59471,8 +59484,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024487148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.66, y: -13.79, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 9.9, y: -11.6, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1099308335}
   - {fileID: 86461363}
@@ -59554,7 +59567,7 @@ Transform:
   m_GameObject: {fileID: 2028504284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 15.1, y: 2.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 784294054}
   - {fileID: 1520633302}
@@ -59577,6 +59590,7 @@ MonoBehaviour:
   isCrab: 0
   scene: {fileID: 835087693}
   automateTime: 0
+  isSpiderCrab: 0
 --- !u!1 &2030253720
 GameObject:
   m_ObjectHideFlags: 0
@@ -61977,7 +61991,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6351324cec6fa46e19f26a4a808735cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db2c8b7e97247d049a9f1b1e2ebb9bdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

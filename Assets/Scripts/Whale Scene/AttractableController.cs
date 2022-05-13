@@ -154,4 +154,14 @@ public class AttractableController : MonoBehaviour
 	private bool isEating() {
 		return (targetPos != defaultPos && targetPos != hidePos) || eatingTime > 0;
 	}
+	public void startWalking()
+    {
+		originAnim.SetBool("isWalk",true);
+		mirrorAnim.SetBool("isWalk", true);
+	}
+    public void stopWalking()
+    {
+		originAnim.SetBool("isWalk", false);
+		mirrorAnim.SetBool("isWalk", false);
+	}
 }

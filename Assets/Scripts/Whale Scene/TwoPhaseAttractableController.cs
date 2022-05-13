@@ -9,7 +9,7 @@ public class TwoPhaseAttractableController : AttractableController
 	private GameObject attracting;
 	private const float attractDist = 5f;
 	private bool hasAttracted = false;
-
+	public bool isSpiderCrab;
 	protected override void Start() {
 		base.Start();
 		attractable = false;
@@ -25,6 +25,10 @@ public class TwoPhaseAttractableController : AttractableController
 			else {
 				Destroy(attracting);
 			}
+            if (isSpiderCrab)
+            {
+				stopWalking();
+            }
 			eatingTime = 4;
 			attracting = null;
 			attractable = true;
@@ -46,6 +50,10 @@ public class TwoPhaseAttractableController : AttractableController
 			attracting = meat;
 			targetPos = attracting.transform.position;
 			hasAttracted = true;
+			if (isSpiderCrab)
+			{
+				startWalking();
+			}
 			return true;
 		}
 		else {

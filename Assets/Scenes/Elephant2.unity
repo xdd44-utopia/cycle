@@ -5864,7 +5864,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728462882}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 949abd666e1f964458c06c8b382609a3, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3d62a0ee81fae441db2ecb57abfe65cc, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -6074,7 +6074,7 @@ SpriteRenderer:
   m_Size: {x: 3.38, y: 6.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &745982599
@@ -6687,7 +6687,7 @@ SpriteRenderer:
   m_Size: {x: 3.38, y: 6.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &876035116
@@ -10730,7 +10730,7 @@ SpriteRenderer:
   m_Size: {x: 3.38, y: 6.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1391257866
@@ -12082,7 +12082,7 @@ SpriteRenderer:
   m_Size: {x: 3.38, y: 6.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1549495598
@@ -16694,7 +16694,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9190230014443736528}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 430a656465c11db49b3807bc50de1143, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: c23377df513b24720a584dffc243dc01, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

@@ -45,7 +45,7 @@ public class DragController : MonoBehaviour
     }
     protected virtual void OnMouseUp()
     {
-        Instantiate(prefabs[(int)Random.Range(0, 3)], originalPosition, Quaternion.identity);
+        Instantiate(prefabs[(int)Random.Range(0, 3)], originalPosition, Quaternion.identity, transform.parent);
         isVanishing = true;
         timer = 0;
     }

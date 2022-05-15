@@ -60,7 +60,7 @@ public class phase3AnimalController : MonoBehaviour
 		anime.SetBool("isSwim", true);
         if (isOctopus)
         {
-			targetPos = transform.position + new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), 0);
+			targetPos = transform.position + new Vector3(Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f), 0);
 		}
 		if (!isCounted)
 		{

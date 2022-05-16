@@ -9,7 +9,6 @@ public class DragController : MonoBehaviour
     private Vector3 selfScenePosition;
     private Vector3 originalPosition;
     private bool isVanishing = false;
-    private bool isAway = false;
     public GameObject[] prefabs;
     SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -40,7 +39,7 @@ public class DragController : MonoBehaviour
         Vector3 currentWorldPosition = Camera.main.ScreenToWorldPoint(currentScenePosition) - new Vector3(0, 0, Camera.main.transform.position.z);
         //设置对象位置为鼠标的世界位置
         transform.localPosition = currentWorldPosition;
-        isAway = true;
+        
 
     }
     protected virtual void OnMouseUp()

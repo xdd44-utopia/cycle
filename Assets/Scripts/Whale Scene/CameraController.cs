@@ -30,11 +30,11 @@ public class CameraController : MonoBehaviour
     {
         if (isUseMoveOnScreenEdge)
         {
-            UpRect = new Rect(0, 2 * Screen.height / 3, Screen.width, Screen.height / 3);
-            DownRect = new Rect(0, 0, Screen.width, Screen.height / 3);
+            UpRect = new Rect(0, 3 * Screen.height / 4, Screen.width, Screen.height / 4);
+            DownRect = new Rect(0, 0, Screen.width, Screen.height / 4);
 
-            LeftRect = new Rect(0, 0, Screen.width / 3, Screen.height);
-            RigthRect = new Rect(2 * Screen.width / 3, 0, Screen.width / 3, Screen.height);
+            LeftRect = new Rect(0, 0, Screen.width / 4, Screen.height);
+            RigthRect = new Rect(3 * Screen.width / 4, 0, Screen.width / 4, Screen.height);
 
 
             MoveUp = (UpRect.Contains(Input.mousePosition));

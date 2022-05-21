@@ -13,14 +13,15 @@ public class SubSceneSwitch : MonoBehaviour
 	};
 	private Status status;
 	private float timer;
-	private float fadeTime = 2.5f;
+	private float fadeTime = 1f;
+	public int startScene;
 	private int targetScene;
 	// Start is called before the first frame update
 	void Start()
 	{
 		timer = 0;
-		status = Status.FadeIn;
-		targetScene = 0;
+		status = Status.FadeOut;
+		targetScene = startScene;
 	}
 
 	// Update is called once per frame
@@ -45,7 +46,7 @@ public class SubSceneSwitch : MonoBehaviour
 					blind.color = new Color(0, 0, 0, 1);
 					timer = 0;
 					status = Status.FadeIn;
-					transform.position = scenes[targetScene].position;
+					transform.position = new Vector3(scenes[targetScene].position.x, scenes[targetScene].position.y, -10) ;
 				}
 				else {
 					blind.color = new Color(0, 0, 0, timer / fadeTime);

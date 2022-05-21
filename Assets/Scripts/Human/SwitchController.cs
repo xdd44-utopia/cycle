@@ -4,29 +4,18 @@ using UnityEngine;
 
 public class SwitchController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private GameObject par;
-    public bool isOut;
-    void Start()
-    {
-        par = this.transform.parent.gameObject;
-    }
+	private SubSceneSwitch controller;
+	public int sceneNum;
+	void Start() {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void OnMouseDown()
-    {
-        if (isOut) {
-            par.GetComponent<HumanPhaseController>().moveToNext();
-            
-        }
-        else {
-            par.GetComponent<HumanPhaseController>().moveToPrevious();
-            
-        }
-        
-    }
+	}
+	void Update() {
+		if (controller == null) {
+			controller = Camera.main.gameObject.GetComponent<SubSceneSwitch>();
+		}
+	}
+	private void OnMouseDown()
+	{
+		controller.switchScene(sceneNum);
+	}
 }

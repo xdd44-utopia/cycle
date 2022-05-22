@@ -36,13 +36,18 @@ public class AudioManager : MonoBehaviour
 			if (timer > 1) {
 				timer = 1;
 				isSwitching = false;
-				sources[cur].Pause();
+				if (nex != cur) {
+					sources[cur].Pause();
+				}
 				cur = nex;
 			}
 		}
 	}
 
 	public void playClip(int x) {
+		if (x < 0 || x >= sources.Length) {
+			return;
+		}
 		nex = x;
 		isSwitching = true;
 		timer = 0;

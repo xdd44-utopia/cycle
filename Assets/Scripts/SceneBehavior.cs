@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SceneBehavior : MonoBehaviour
 {
+	public AudioManager audioManager;
+	public int audioIndex;
 	public int target;
 	public float cameraSize;
 	public SceneBehavior nextScene;
@@ -33,6 +35,7 @@ public class SceneBehavior : MonoBehaviour
 	public void activate() {
 		activated = true;
 		activateRecursive(this.gameObject);
+		audioManager.playClip(audioIndex);
 	}
 
 	private void activateRecursive(GameObject obj) {

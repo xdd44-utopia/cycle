@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,18 @@ public class WindowUIController : MonoBehaviour
 
 	void OnMouseDown() {
 		for (int i=0;i<anims.Length;i++) {
-			anims[i].SetBool("Trigger", true);
+			try {
+				anims[i].SetBool("Trigger", true);
+			}
+			catch (NullReferenceException e) {
+
+			}
+			try {
+				anims[i].SetTrigger("Trigger");
+			}
+			catch (NullReferenceException e) {
+				
+			}
 		}
 		if (nextWindow != null) {
 			nextWindow.activate();

@@ -21,4 +21,8 @@ public class AnimationBehavior : MonoBehaviour
     public void disableTrigger() {
         animator.SetBool("Trigger", false);
     }
+
+    public void disableAnimation() {
+        animator.enabled = false;
+    }
 }

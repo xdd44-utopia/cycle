@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class RotateAble : MonoBehaviour
 {
-    private float prevAngle = 0;
-    public float accAngle;
+	private float prevAngle = 0;
+	public PolygonCollider2D attachCollider;
+	public Transform attachTarget;
+	private float accAngle;
 	public float goalAngle;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.rotation = Quaternion.Euler(0, 0, -accAngle);
-        if (prevAngle == goalAngle)
-        {
-			Debug.Log("Success");
-        }
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		transform.rotation = Quaternion.Euler(0, 0, -accAngle);
+		if (Mathf.Abs(accAngle - goalAngle) < 5) {
+			transform.SetParent(attachTarget);
+			attachCollider.enabled = true;
+			Destroy(this);
+		}
+	}
 	private void OnMouseDown()
 	{
 		prevAngle = getAngle();

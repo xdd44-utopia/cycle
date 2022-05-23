@@ -5,6 +5,7 @@ using UnityEngine;
 public class SubSceneSwitch : MonoBehaviour
 {
 	public Transform[] scenes;
+	public GameObject[] prefabs;
 	public SpriteRenderer blind;
 	private enum Status {
 		Still,
@@ -15,12 +16,14 @@ public class SubSceneSwitch : MonoBehaviour
 	private float timer;
 	private float fadeTime = 1f;
 	public int startScene;
+	private int currentScene;
 	private int targetScene;
 	// Start is called before the first frame update
 	void Start()
 	{
 		timer = 0;
-		status = Status.FadeOut;
+		status = Status.FadeIn;
+		currentScene = startScene;
 		targetScene = startScene;
 	}
 
@@ -46,7 +49,11 @@ public class SubSceneSwitch : MonoBehaviour
 					blind.color = new Color(0, 0, 0, 1);
 					timer = 0;
 					status = Status.FadeIn;
-					transform.position = new Vector3(scenes[targetScene].position.x, scenes[targetScene].position.y, -10) ;
+					GameObject replaced = Instantiate(prefabs[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+					Destroy(scenes[currentScene].gameObject);
+					scenes[currentScene] = replaced.transform;
+					currentScene = targetScene;
+					transform.position = new Vector3(scenes[targetScene].position.x, scenes[targetScene].position.y, -10);
 				}
 				else {
 					blind.color = new Color(0, 0, 0, timer / fadeTime);

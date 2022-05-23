@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SwitchController : MonoBehaviour
 {
-	private SubSceneSwitch controller;
+	private HumanSubSceneSwitch controller;
 	public int sceneNum;
 	void Start() {
 
 	}
 	void Update() {
 		if (controller == null) {
-			controller = Camera.main.gameObject.GetComponent<SubSceneSwitch>();
+			controller = Camera.main.gameObject.GetComponent<HumanSubSceneSwitch>();
 		}
 	}
 	private void OnMouseDown()

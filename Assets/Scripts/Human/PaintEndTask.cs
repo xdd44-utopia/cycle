@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PaintEndTask : MonoBehaviour
 {
-	private SubSceneSwitch controller;
+	private HumanSubSceneSwitch controller;
 	public int sceneNum;
 	
 	void Start()
@@ -16,7 +16,7 @@ public class PaintEndTask : MonoBehaviour
 	void Update()
 	{
 		if (controller == null) {
-			controller = Camera.main.gameObject.GetComponent<SubSceneSwitch>();
+			controller = Camera.main.gameObject.GetComponent<HumanSubSceneSwitch>();
 		}
 	}
 	void OnMouseDown()

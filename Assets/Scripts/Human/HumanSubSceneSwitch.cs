@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubSceneSwitch : MonoBehaviour
+public class HumanSubSceneSwitch : MonoBehaviour
 {
 	public Transform[] scenes;
 	public GameObject[] prefabs;

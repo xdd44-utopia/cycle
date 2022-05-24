@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Debugger : MonoBehaviour
 {
-	public BirdSubSceneSwitch scene;
-	private int nex = 1;
 	void Start()
 	{
 		
@@ -17,8 +15,7 @@ public class Debugger : MonoBehaviour
 		
 	}
 
-	void OnMouseDown() {
-		scene.switchScene(nex);
-		nex++;
+	public void test() {
+		Debug.Log("test");
 	}
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RotateAble : MonoBehaviour
 {
@@ -27,10 +28,16 @@ public class RotateAble : MonoBehaviour
 	}
 	private void OnMouseDown()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		prevAngle = getAngle();
 	}
 	private void OnMouseDrag()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		float angle = getAngle();
 		float dAngle = angle - prevAngle;
 		if (dAngle < -Mathf.PI)

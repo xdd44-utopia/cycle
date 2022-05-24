@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TriggerableAnimationBehavior : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class TriggerableAnimationBehavior : MonoBehaviour
     }
 
 	public void OnMouseDown() {
-		Debug.Log("!");
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		enableTrigger();
 	}
 

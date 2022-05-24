@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PaintEndTask : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class PaintEndTask : MonoBehaviour
 	}
 	void OnMouseDown()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		controller.switchScene(0);
 	}
 }

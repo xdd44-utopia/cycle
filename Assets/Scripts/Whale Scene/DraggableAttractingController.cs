@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DraggableAttractingController : AttractingController {
 
@@ -19,10 +20,16 @@ public class DraggableAttractingController : AttractingController {
 	}
 	protected override void OnMouseDown() {
 		
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 	}
 
 	void OnMouseDrag() //鼠标拖拽时系统自动调用该方法
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		if (!hasAttracted) {
 			Vector3 currentScenePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, selfScenePosition.z);
 			//将屏幕坐标转换为世界坐标

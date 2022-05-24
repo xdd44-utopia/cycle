@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CircleController : MonoBehaviour
 {
@@ -17,10 +18,16 @@ public class CircleController : MonoBehaviour
 	}
 	private void OnMouseDown()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		prevAngle = getAngle();
 	}
 	private void OnMouseDrag()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		float angle = getAngle();
 		float dAngle = angle - prevAngle;
 		if (dAngle < -Mathf.PI)

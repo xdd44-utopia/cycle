@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PaintSubTask : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class PaintSubTask : MonoBehaviour
 	}
 	protected virtual void OnMouseDrag()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		if (isFixed) {
 			return;
 		}
@@ -42,6 +46,9 @@ public class PaintSubTask : MonoBehaviour
 	}
 	protected virtual void OnMouseUp()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		isTriggered = true;
 		if (target.magnitude == 0) {
 			anim.SetTrigger("Trigger");

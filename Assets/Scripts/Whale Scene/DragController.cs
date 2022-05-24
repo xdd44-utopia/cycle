@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DragController : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class DragController : MonoBehaviour
     }
     protected virtual void OnMouseDrag()
     {
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
         Vector3 currentScenePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, selfScenePosition.z);
         //将屏幕坐标转换为世界坐标
         Vector3 currentWorldPosition = Camera.main.ScreenToWorldPoint(currentScenePosition) - new Vector3(0, 0, Camera.main.transform.position.z);
@@ -44,6 +48,9 @@ public class DragController : MonoBehaviour
     }
     protected virtual void OnMouseUp()
     {
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
         Instantiate(prefabs[(int)Random.Range(0, 3)], originalPosition, Quaternion.identity, transform.parent);
         isVanishing = true;
         timer = 0;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BathroomTaskController : MonoBehaviour
 {
@@ -42,6 +43,9 @@ public class BathroomTaskController : MonoBehaviour
 	}
 	protected virtual void OnMouseDrag()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		Vector3 deltapos = Vector3.zero;
 		if ((Input.mousePosition - preMousepos).magnitude > 10) {
 			deltapos = Input.mousePosition - preMousepos;

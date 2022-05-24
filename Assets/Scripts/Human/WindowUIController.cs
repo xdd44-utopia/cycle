@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class WindowUIController : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class WindowUIController : MonoBehaviour
 	}
 
 	void OnMouseDown() {
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		for (int i=0;i<anims.Length;i++) {
 			try {
 				anims[i].SetBool("Trigger", true);

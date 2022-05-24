@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class WormController : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class WormController : MonoBehaviour
 
 	void OnMouseDown() {
 
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		List<GameObject> spawns = GameObject.FindGameObjectsWithTag("WormSpawn").ToList();
 		if (spawns.Count == 0){
 			return;

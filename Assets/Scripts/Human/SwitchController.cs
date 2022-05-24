@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SwitchController : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class SwitchController : MonoBehaviour
 	}
 	private void OnMouseDown()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		controller.switchScene(sceneNum);
 	}
 }

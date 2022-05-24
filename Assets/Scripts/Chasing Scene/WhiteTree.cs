@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class WhiteTree : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class WhiteTree : MonoBehaviour
 	}
 
 	private void OnMouseDown() {
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		if (Mathf.Abs(elephant.transform.position.x + 4f - transform.position.x) < 2f && !isEaten) {
 			elephant.GetComponent<ElephantController>().eating = true;
 			isEaten = true;

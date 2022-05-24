@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class phase3MeatController : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class phase3MeatController : MonoBehaviour
     }
     private void OnMouseDrag()
     {
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
         Vector3 currentScenePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, selfScenePosition.z);
         //将屏幕坐标转换为世界坐标
         Vector3 currentWorldPosition = Camera.main.ScreenToWorldPoint(currentScenePosition);

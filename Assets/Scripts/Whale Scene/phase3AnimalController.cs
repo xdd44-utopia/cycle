@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class phase3AnimalController : MonoBehaviour
 {
@@ -53,6 +54,9 @@ public class phase3AnimalController : MonoBehaviour
 	}
 	protected virtual void OnMouseDown()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) {
+			return;
+		}
 		activate();
 	}
 	public void activate()

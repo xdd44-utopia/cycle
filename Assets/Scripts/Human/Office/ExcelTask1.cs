@@ -37,10 +37,20 @@ public class ExcelTask1 : MonoBehaviour
 
 	public void switchSprite(bool isUpper, int id) {
 		if (isUpper) {
-			upperSprites[id].enabled = !upperSprites[id].enabled;
+			if (id > 0) {
+				upperSprites[id - 1].enabled = !upperSprites[id - 1].enabled;
+			}
+			if (id < 4) {
+				upperSprites[id + 1].enabled = !upperSprites[id + 1].enabled;
+			}
 		}
 		else {
-			lowerSprites[id].enabled = !lowerSprites[id].enabled;
+			if (id > 0) {
+				lowerSprites[id - 1].enabled = !lowerSprites[id - 1].enabled;
+			}
+			if (id < 4) {
+				lowerSprites[id + 1].enabled = !lowerSprites[id + 1].enabled;
+			}
 		}
 	}
 }

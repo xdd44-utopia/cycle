@@ -5,7 +5,8 @@ using UnityEngine;
 public class HumanSubSceneSwitch : MonoBehaviour
 {
 	public Transform[] scenes;
-	public GameObject[] prefabs;
+	public GameObject[] day2Prefab;
+	public GameObject[] day3Prefab;
 	public SpriteRenderer blind;
 	private enum Status {
 		Still,
@@ -18,13 +19,12 @@ public class HumanSubSceneSwitch : MonoBehaviour
 	public int startScene;
 	private int currentScene;
 	private int targetScene;
+	private bool isDay3 = false;
 	// Start is called before the first frame update
 	void Start()
 	{
-		timer = 0;
-		status = Status.FadeIn;
-		currentScene = startScene;
-		targetScene = startScene;
+		currentScene = 0;
+		switchScene(startScene);
 	}
 
 	// Update is called once per frame
@@ -49,7 +49,8 @@ public class HumanSubSceneSwitch : MonoBehaviour
 					blind.color = new Color(0, 0, 0, 1);
 					timer = 0;
 					status = Status.FadeIn;
-					GameObject replaced = Instantiate(prefabs[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+					GameObject replaced = Instantiate(isDay3 ? day3Prefab[currentScene] : day2Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+					isDay3 = true;
 					Destroy(scenes[currentScene].gameObject);
 					scenes[currentScene] = replaced.transform;
 					currentScene = targetScene;
@@ -63,7 +64,14 @@ public class HumanSubSceneSwitch : MonoBehaviour
 		}
 	}
 	public void switchScene(int x) {
+		timer = 0;
 		targetScene = x;
 		status = Status.FadeOut;
+		switch(x) {
+			case 5: {
+				scenes[5].gameObject.GetComponent<Animator>().SetTrigger("Trigger");
+				break;
+			}
+		}
 	}
 }

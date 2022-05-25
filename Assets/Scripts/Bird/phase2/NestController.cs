@@ -1,10 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PuzzleComponent : MonoBehaviour
+public class NestController : MonoBehaviour
 {
-	Vector3 mPrevPos = Vector3.zero;
+	public Animator anim;
+	private Vector3 mPrevPos = Vector3.zero;
 	private float correctSpeed = 0.1f;
+	private float currentCorrectAngle = 270;
 	private float correctAngleRange = 5f;
 	private float prevAngle = 0;
 	void Start()
@@ -16,11 +20,14 @@ public class PuzzleComponent : MonoBehaviour
 	{
 		float angle = transform.rotation.eulerAngles.z;
 		mPrevPos = Input.mousePosition;
-		if (angle > 0 && angle < correctAngleRange) {
-			transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(angle, 0, correctSpeed));
-		}
-		if (angle - 360 < 0 && angle - 360 > -correctAngleRange) {
-			transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(angle - 360, 0, correctSpeed));
+		if (angle - currentCorrectAngle < correctAngleRange) {
+			transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(angle, currentCorrectAngle, correctSpeed));
+			if (Mathf.Abs(angle - currentCorrectAngle) < 0.05f) {
+				Debug.Log("Triggered");
+				anim.SetTrigger("Trigger");
+				transform.rotation = Quaternion.Euler(0, 0, currentCorrectAngle);
+				currentCorrectAngle -= 90;
+			}
 		}
 	}
 	private void OnMouseDown()
@@ -44,6 +51,9 @@ public class PuzzleComponent : MonoBehaviour
 		if (dAngle > Mathf.PI)
 		{
 			dAngle -= Mathf.PI * 2;
+		}
+		if (dAngle > 0) {
+			return;
 		}
 		transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + dAngle * 180 / Mathf.PI);
 		prevAngle = angle;

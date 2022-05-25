@@ -7,6 +7,9 @@ public class BirdSubSceneSwitch : MonoBehaviour
 	public Vector3[] pos;
 	public Animator birdA;
 	public Animator birdB;
+	public Animator nest;
+	private bool nestTriggered = false;
+	public int startScene;
 	private enum Status {
 		Still,
 		Acc,
@@ -14,6 +17,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 		Const
 	};
 	private Status status;
+	private int target;
 	private Vector3 targetPos;
 	private Vector3 speed;
 	private float maxSpeed = 5f;
@@ -21,7 +25,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		switchScene(0);
+		switchScene(startScene);
 	}
 
 	// Update is called once per frame
@@ -62,12 +66,22 @@ public class BirdSubSceneSwitch : MonoBehaviour
 		}
 		else {
 			status = Status.Still;
+			switch (target) {
+				case 2: {
+					if (!nestTriggered) {
+						nestTriggered = true;
+						nest.SetTrigger("Trigger");
+					}
+					break;
+				}
+			}
 		}
 	}
 	public void switchScene(int x) {
 		if (x >= pos.Length) {
 			return;
 		}
+		target = x;
 		targetPos = pos[x];
 		status = Status.Acc;
 		switch (x) {

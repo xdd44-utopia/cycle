@@ -5,29 +5,28 @@ using UnityEngine.EventSystems;
 
 public class FeedBirdController : MonoBehaviour
 {
-    public FeedController feed;
-    private bool isfeeded;
-    // Start is called before the first frame update
-    void Start()
-    {
-        isfeeded = false;
-    }
+	public FoodCollector foodCollector;
+	private bool isfeeded;
+	// Start is called before the first frame update
+	void Start()
+	{
+		isfeeded = false;
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void OnMouseDown()
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-        if (!isfeeded)
-        {
-            feed.addCount();
-            isfeeded = true;
-        }
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		
+	}
+	private void OnMouseDown()
+	{
+		if (EventSystem.current.IsPointerOverGameObject())
+		{
+			return;
+		}
+		if (!isfeeded) {
+			foodCollector.feed();
+			isfeeded = true;
+		}
+	}
 }

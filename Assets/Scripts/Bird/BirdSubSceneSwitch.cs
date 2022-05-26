@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdSubSceneSwitch : MonoBehaviour
 {
 	public Vector3[] pos;
 	public Animator birdA;
 	public Animator birdB;
-	public Animator nest;
+	public Animator[] nests;
+	public FoodCollector foodCollector;
 	private bool nestTriggered = false;
 	public int startScene;
 	private enum Status {
@@ -18,6 +20,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 	};
 	private Status status;
 	private int target;
+	private int current;
 	private Vector3 targetPos;
 	private Vector3 speed;
 	private float maxSpeed = 5f;
@@ -31,7 +34,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if ((transform.position - targetPos).magnitude > 0.01f) {
+		if ((transform.position - targetPos).magnitude > 0.1f) {
 			switch (status) {
 				case Status.Still: {
 					speed = Vector3.zero;
@@ -66,12 +69,45 @@ public class BirdSubSceneSwitch : MonoBehaviour
 		}
 		else {
 			status = Status.Still;
+			current = target;
 			switch (target) {
 				case 2: {
 					if (!nestTriggered) {
 						nestTriggered = true;
-						nest.SetTrigger("Trigger");
+						Debug.Log("trigger");
+						nests[0].SetTrigger("Trigger");
 					}
+					break;
+				}
+				case 3: {
+					if (!nestTriggered) {
+						nestTriggered = true;
+						foodCollector.isCollecting = false;
+						maxSpeed = 5f;
+						nests[1].SetTrigger("Trigger");
+					}
+					break;
+				}
+				case 4: {
+					if (!nestTriggered) {
+						nestTriggered = true;
+						foodCollector.isCollecting = false;
+						maxSpeed = 5f;
+						nests[2].SetTrigger("Trigger");
+					}
+					break;
+				}
+				case 5: {
+					if (!nestTriggered) {
+						nestTriggered = true;
+						foodCollector.isCollecting = false;
+						maxSpeed = 5f;
+						nests[3].SetTrigger("Trigger");
+					}
+					break;
+				}
+				case 6: {
+					SceneManager.LoadScene(sceneName:"Elephant1");
 					break;
 				}
 			}
@@ -82,7 +118,9 @@ public class BirdSubSceneSwitch : MonoBehaviour
 			return;
 		}
 		target = x;
-		targetPos = pos[x];
+		if (x < pos.Length) {
+			targetPos = pos[x];
+		}
 		status = Status.Acc;
 		switch (x) {
 			case 0: {
@@ -97,8 +135,40 @@ public class BirdSubSceneSwitch : MonoBehaviour
 			case 2: {
 				birdA.SetTrigger("Trigger");
 				birdB.SetTrigger("Trigger");
+				nestTriggered = false;
+				break;
+			}
+			case 3: {
+				birdA.SetTrigger("Trigger");
+				maxSpeed = 2.5f;
+				foodCollector.isCollecting = true;
+				nestTriggered = false;
+				break;
+			}
+			case 4: {
+				birdA.SetTrigger("Trigger");
+				maxSpeed = 2.5f;
+				foodCollector.isCollecting = true;
+				nestTriggered = false;
+				nests[1].SetTrigger("Trigger");
+				break;
+			}
+			case 5: {
+				birdA.SetTrigger("Trigger");
+				maxSpeed = 2.5f;
+				foodCollector.isCollecting = true;
+				nestTriggered = false;
+				nests[2].SetTrigger("Trigger");
+				break;
+			}
+			case 6: {
+				maxSpeed = 5f;
+				nests[3].SetTrigger("Trigger");
 				break;
 			}
 		}
+	}
+	public void nextScene() {
+		switchScene(current + 1);
 	}
 }

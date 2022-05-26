@@ -54,7 +54,6 @@ public class NoteTaskController : MonoBehaviour
 			case Status.Demo: {
 				timer += Time.deltaTime;
 				if (timer > demoIntv) {
-					Debug.Log(curTask + " " + curNote + " " + tasks[curTask][curNote]);
 					switch (curTask) {
 						case 0: {
 							windowAnim.SetTrigger("Trigger");

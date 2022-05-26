@@ -23,7 +23,6 @@ public class NestController : MonoBehaviour
 		if (angle - currentCorrectAngle < correctAngleRange) {
 			transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(angle, currentCorrectAngle, correctSpeed));
 			if (Mathf.Abs(angle - currentCorrectAngle) < 0.05f) {
-				Debug.Log("Triggered");
 				anim.SetTrigger("Trigger");
 				transform.rotation = Quaternion.Euler(0, 0, currentCorrectAngle);
 				currentCorrectAngle -= 90;
@@ -70,7 +69,6 @@ public class NestController : MonoBehaviour
 		{
 			angle += Mathf.PI * 2;
 		}
-		//debug.text = Camera.main.ScreenToWorldPoint(Input.mousePosition) + " " + v + " " + angle * 180 / Mathf.PI;
 		return angle;
 	}
 }

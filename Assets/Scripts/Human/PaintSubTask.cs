@@ -28,6 +28,7 @@ public class PaintSubTask : MonoBehaviour
 			transform.localPosition = Vector3.Lerp(transform.localPosition, target, 0.5f);
 			if (!isReached) {
 				isReached = true;
+				sprite.color =new Color(0,0,0,0);
 				task.addCount();
 			}
 		}

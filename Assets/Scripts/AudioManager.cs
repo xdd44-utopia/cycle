@@ -5,6 +5,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 	public AudioClip[] clips;
+	public bool[] isLoop;
+	public bool playOnStartUp;
 	private AudioSource[] sources;
 	private float timer;
 	private bool isSwitching;
@@ -17,12 +19,17 @@ public class AudioManager : MonoBehaviour
 		for (int i=0;i<clips.Length;i++) {
 			sources[i] = gameObject.AddComponent<AudioSource>();
 			sources[i].clip = clips[i];
-			sources[i].loop = true;
+			sources[i].loop = isLoop[i];
 			sources[i].volume = 0;
 			sources[i].Pause();
 		}
 		sources[0].volume = 1;
-		sources[0].Play(0);
+		if (playOnStartUp) {
+			sources[0].Play(0);
+		}
+		else {
+			sources[0].Pause();
+		}
 		cur = 0;
 	}
 

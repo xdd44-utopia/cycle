@@ -50,7 +50,6 @@ public class HumanSubSceneSwitch : MonoBehaviour
 					timer = 0;
 					status = Status.FadeIn;
 					GameObject replaced = Instantiate(isDay3 ? day3Prefab[currentScene] : day2Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
-					isDay3 = true;
 					Destroy(scenes[currentScene].gameObject);
 					scenes[currentScene] = replaced.transform;
 					currentScene = targetScene;

@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class AnimationBehavior : MonoBehaviour
 {
+    private AudioManager audio;
     private Animator animator;
     void Start()
     {
+        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         animator = GetComponent<Animator>();
     }
 
@@ -24,5 +26,9 @@ public class AnimationBehavior : MonoBehaviour
 
     public void disableAnimation() {
         animator.enabled = false;
+    }
+
+    public void playAudio(int audioID) {
+        audio.playClip(audioID);
     }
 }

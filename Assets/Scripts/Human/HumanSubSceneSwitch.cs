@@ -24,7 +24,9 @@ public class HumanSubSceneSwitch : MonoBehaviour
 	void Start()
 	{
 		currentScene = 0;
-		switchScene(startScene);
+		if (startScene >= 0) {
+			switchScene(startScene);
+		}
 	}
 
 	// Update is called once per frame
@@ -67,10 +69,18 @@ public class HumanSubSceneSwitch : MonoBehaviour
 		targetScene = x;
 		status = Status.FadeOut;
 		switch(x) {
-			case 5: {
-				scenes[5].gameObject.GetComponent<Animator>().SetTrigger("Trigger");
+			case 4: {
+				scenes[4].gameObject.GetComponent<Animator>().SetTrigger("Trigger");
 				break;
 			}
 		}
+	}
+	public void switchSceneWithoutFade(int x) {
+		targetScene = x;
+		GameObject replaced = Instantiate(isDay3 ? day3Prefab[currentScene] : day2Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+		Destroy(scenes[currentScene].gameObject);
+		scenes[currentScene] = replaced.transform;
+		currentScene = targetScene;
+		transform.position = new Vector3(scenes[targetScene].position.x, scenes[targetScene].position.y, -10);
 	}
 }

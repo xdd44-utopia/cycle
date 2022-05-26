@@ -16,7 +16,7 @@ public class MenuController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		
+		Settings.volume = 1;
 	}
 
 	// Update is called once per frame
@@ -26,6 +26,7 @@ public class MenuController : MonoBehaviour
 	}
 
 	public void startGame() {
+		Settings.startFromScratch = true;
 		SceneManager.LoadScene(sceneName:"Human");
 	}
 
@@ -48,6 +49,7 @@ public class MenuController : MonoBehaviour
 
 	public void volumeChange() {
 		volumeText.text = (int)(100 * volume.value) + "%";
+		Settings.volume = volume.value;
 	}
 
 	public void quitGame() {

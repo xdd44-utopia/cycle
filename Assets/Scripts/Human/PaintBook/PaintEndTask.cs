@@ -5,8 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PaintEndTask : MonoBehaviour
 {
-	private HumanSubSceneSwitch controller;
-	public int sceneNum;
+	public Animator scene;
 	
 	void Start()
 	{
@@ -16,15 +15,9 @@ public class PaintEndTask : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (controller == null) {
-			controller = Camera.main.gameObject.GetComponent<HumanSubSceneSwitch>();
-		}
 	}
 	void OnMouseDown()
 	{
-		if (EventSystem.current.IsPointerOverGameObject()) {
-			return;
-		}
-		controller.switchScene(0);
+		scene.SetTrigger("Trigger");
 	}
 }

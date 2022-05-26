@@ -79,6 +79,7 @@ public class SelectScreen : MonoBehaviour
 	}
 
 	public void switchScene() {
+		Settings.startFromScratch = false;
 		switch (cur) {
 			case 0:
 				SceneManager.LoadScene(sceneName:"Human");

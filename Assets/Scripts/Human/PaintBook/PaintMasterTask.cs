@@ -6,6 +6,7 @@ public class PaintMasterTask : MonoBehaviour
 {
 	public int targetCount;
 	public Animator targetAnim;
+	public Collider2D collider;
 	private int count = 0;
 	
 	void Start()
@@ -18,6 +19,7 @@ public class PaintMasterTask : MonoBehaviour
 	{
 		if (count == targetCount) {
 			targetAnim.SetTrigger("Trigger");
+			collider.enabled = true;
 			Destroy(this);
 		}
 	}

@@ -13,16 +13,17 @@ public class RotateAble : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		
+		accAngle = - 60;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
 		transform.rotation = Quaternion.Euler(0, 0, -accAngle);
-		if (Mathf.Abs(accAngle - goalAngle) < 5) {
+		if (Mathf.Abs(transform.rotation.eulerAngles.z - goalAngle) < 5) {
 			transform.SetParent(attachTarget);
 			attachCollider.enabled = true;
+			GetComponent<Collider2D>().enabled = false;
 			Destroy(this);
 		}
 	}

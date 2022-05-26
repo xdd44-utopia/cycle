@@ -7252,7 +7252,7 @@ MonoBehaviour:
   - {fileID: 989911558827092788, guid: b88150c6e748e43b2be5a0f8bbcd770c, type: 3}
   - {fileID: 6774817631050318851, guid: 1d009037491c2cb45b1d3e0800331a8b, type: 3}
   blind: {fileID: 1017084586}
-  startScene: 5
+  startScene: 1
 --- !u!1 &1246991008
 GameObject:
   m_ObjectHideFlags: 0

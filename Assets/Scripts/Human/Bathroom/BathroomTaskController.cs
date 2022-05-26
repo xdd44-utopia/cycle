@@ -15,9 +15,12 @@ public class BathroomTaskController : MonoBehaviour
 	private Vector3 preMousepos;
 	private bool isMoving;
 	private float timer = 0;
+	public Cutdown cutdown;
+	public bool isFinished;
 	// Start is called before the first frame update
 	void Start()
 	{
+		isFinished = false;
 		isMoving = false;
 		mask = this.gameObject.transform.GetChild(1);
 		maskCenterPos = mask.localPosition;
@@ -34,10 +37,15 @@ public class BathroomTaskController : MonoBehaviour
 			}
 		}
 		if (acc > goal) {
+            if (!isFinished)
+            {
+				cutdown.addCount();
+				isFinished = true;
+			}
 			Debug.Log("Success");
 		}
 		else {
-			mask.transform.localScale = new Vector3(acc / goal, 1, 1);
+			mask.transform.localScale = new Vector3(1-acc / goal, 1, 1);
 			mask.transform.localPosition = new Vector3(maskCenterPos.x - 1.67f * (1 - acc / goal), maskCenterPos.y, maskCenterPos.z);
 		}
 	}

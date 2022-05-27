@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MaskBrush : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class MaskBrush : MonoBehaviour
 	private Color[] Colors;
 	private int Width;
 	private int Height;
-
 	void Start() 
 	{
 		//Get objects
@@ -85,6 +85,17 @@ public class MaskBrush : MonoBehaviour
 				DrawOnMask(x, y, 5);
 			}
 		}
+	}
+	protected virtual void OnMouseDrag()
+	{
+		if (EventSystem.current.IsPointerOverGameObject())
+		{
+			return;
+		}
+
+		Vector3 deltapos = Vector3.zero;
+		DrawOnMask((int)Input.mousePosition.x, (int)Input.mousePosition.y, 5);
+		
 	}
 
 }

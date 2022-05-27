@@ -1853,6 +1853,8 @@ MonoBehaviour:
   MaxAngle: 105
   threshold: 10
   goal: 5
+  cutdown: {fileID: 0}
+  isFinished: 0
 --- !u!60 &9133541491145269346
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2168,6 +2170,8 @@ MonoBehaviour:
   MaxAngle: 60
   threshold: 10
   goal: 3
+  cutdown: {fileID: 0}
+  isFinished: 0
 --- !u!114 &8834742389909084008
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ public class Cutdown : MonoBehaviour
     void Update()
     {
         acc += Time.deltaTime;
+        Debug.Log(acc);
         if (controller == null)
         {
             controller = Camera.main.gameObject.GetComponent<HumanSubSceneSwitch>();
@@ -40,8 +41,8 @@ public class Cutdown : MonoBehaviour
         }
         else
         {
-            mask.transform.localScale = new Vector3(acc / goal, 1, 1);
-            mask.transform.localPosition = new Vector3(maskCenterPos.x - 1.67f * (1 - acc / goal), maskCenterPos.y, maskCenterPos.z);
+            mask.transform.localScale = new Vector3(1-acc / totalTime, 1, 1);
+            mask.transform.localPosition = new Vector3(maskCenterPos.x - 5.5f * (acc / totalTime), maskCenterPos.y, maskCenterPos.z);
         }
 
     }

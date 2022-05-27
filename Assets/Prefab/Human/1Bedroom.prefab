@@ -1084,7 +1084,7 @@ MonoBehaviour:
   targetCount: 3
   targetAnim: {fileID: 1165955887698229116}
   stickAnim: {fileID: 2535775737255016230}
-  collider: {fileID: 1165955887698229115}
+  targetCollider: {fileID: 1165955887698229115}
 --- !u!1 &1165955886746611770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,7 +2857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCount: 4
   targetAnim: {fileID: 1165955888027880572}
-  collider: {fileID: 1165955888027880573}
+  targetCollider: {fileID: 1165955888027880573}
 --- !u!1 &1165955888202046400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,7 +3446,7 @@ MonoBehaviour:
   targetCount: 2
   targetAnim: {fileID: 1165955887672143418}
   stickAnim: {fileID: 4903488371540907088}
-  collider: {fileID: 4544687635595426834}
+  targetCollider: {fileID: 4544687635595426834}
 --- !u!1 &1165955888390219732
 GameObject:
   m_ObjectHideFlags: 0

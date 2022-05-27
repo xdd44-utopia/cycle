@@ -5,18 +5,18 @@ using UnityEngine.EventSystems;
 
 public class DraggableAttractingController : AttractingController {
 
-	private PolygonCollider2D collider;
+	private PolygonCollider2D draggableCollider;
 	private Vector3 selfScenePosition;
 	private bool hasAttracted = false;
 
 	protected override void Start()
 	{
-		collider = GetComponent<PolygonCollider2D>();
+		draggableCollider = GetComponent<PolygonCollider2D>();
 		selfScenePosition = Camera.main.WorldToScreenPoint(transform.position);
 	}
 
 	public override void activate() {
-		collider.enabled = true;
+		draggableCollider.enabled = true;
 	}
 	protected override void OnMouseDown() {
 		

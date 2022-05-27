@@ -8,12 +8,12 @@ public class PPTComponentController : MonoBehaviour
 	public int ans;
 	private int cur;
 	private bool isActivated = false;
-	private Collider2D collider;
+	private Collider2D componentCollider;
 	private List<SpriteRenderer> sprites = new List<SpriteRenderer>();
 	// Start is called before the first frame update
 	void Start()
 	{
-		collider = GetComponent<Collider2D>();
+		componentCollider = GetComponent<Collider2D>();
 		for (int i=0;i<transform.childCount;i++) {
 			sprites.Add(transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>());
 		}
@@ -27,10 +27,10 @@ public class PPTComponentController : MonoBehaviour
 		}
 		if (isActivated) {
 			sprites[cur].enabled = true;
-			collider.enabled = true;
+			componentCollider.enabled = true;
 		}
 		else {
-			collider.enabled = false;
+			componentCollider.enabled = false;
 		}
 	}
 	public bool isCorrect() {

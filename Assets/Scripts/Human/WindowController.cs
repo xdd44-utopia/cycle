@@ -16,7 +16,7 @@ public class WindowController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (automateTime >= 0) {
+		if (automateTime >= 0 && Mathf.Abs(Camera.main.transform.position.y - transform.position.y) < 10) {
 			timer += Time.deltaTime;
 			if (timer > automateTime) {
 				activate();

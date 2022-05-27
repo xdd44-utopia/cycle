@@ -59,8 +59,6 @@ public class AudioManager : MonoBehaviour
 		isSwitching = true;
 		timer = 0;
 		sources[nex].Play(0);
-		Debug.Log("Switch to " + x);
 	}
-
 
 }

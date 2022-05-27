@@ -9,6 +9,6 @@ public class OfficeFinish : MonoBehaviour
 		scene = Camera.main.gameObject.GetComponent<HumanSubSceneSwitch>();
 	}
 	public void endScene() {
-		scene.switchScene(6);
+		scene.switchScene(5);
 	}
 }

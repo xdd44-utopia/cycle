@@ -49,18 +49,16 @@ public class BathroomTaskController : MonoBehaviour
 			}
 		}
 	}
-	protected virtual void OnMouseDrag()
-	{
+	private void OnMouseDrag() {
 		if (EventSystem.current.IsPointerOverGameObject()) {
 			return;
 		}
 		Vector3 deltapos = Vector3.zero;
-		if ((Input.mousePosition - preMousepos).magnitude > 10) {
+		if ((Input.mousePosition - preMousepos).magnitude > 5) {
 			deltapos = Input.mousePosition - preMousepos;
-			preMousepos = Input.mousePosition;
 		}
-		if (deltapos.y != 0 && deltapos.x != 0)
-		{
+		preMousepos = Input.mousePosition;
+		if (deltapos.magnitude > 0) {
 			float angle = Mathf.Atan(Mathf.Abs(deltapos.y) / Mathf.Abs(deltapos.x));
 			angle = angle * 180 / Mathf.PI;
 			if (deltapos.magnitude > threshold && angle > MinAngle && angle < MaxAngle) {

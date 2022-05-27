@@ -8,18 +8,7 @@ public class WindowUIController : MonoBehaviour
 {
 	public Animator[] anims;
 	public WindowController nextWindow;
-	// Start is called before the first frame update
-	void Start()
-	{
-		
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-		
-	}
-
+	public bool isLastOne;
 	void OnMouseDown() {
 		if (EventSystem.current.IsPointerOverGameObject()) {
 			return;
@@ -41,5 +30,9 @@ public class WindowUIController : MonoBehaviour
 		if (nextWindow != null) {
 			nextWindow.activate();
 		}
+		if (isLastOne) {
+			Camera.main.GetComponent<HumanSubSceneSwitch>().switchScene(4);
+		}
+		Destroy(this);
 	}
 }

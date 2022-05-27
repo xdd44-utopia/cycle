@@ -9,21 +9,19 @@ public class BathroomTaskController : MonoBehaviour
 	public int MaxAngle;
 	public float threshold;
 	public float goal;
-	private Transform mask;
-	private Vector3 maskCenterPos;
+	public ProgressBar progressBar;
+	public Countdown countdown;
+	public SpriteRenderer sprite;
 	private float acc;
 	private Vector3 preMousepos;
 	private bool isMoving;
 	private float timer = 0;
-	public Cutdown cutdown;
-	public bool isFinished;
+	private bool isFinished;
 	// Start is called before the first frame update
 	void Start()
 	{
 		isFinished = false;
 		isMoving = false;
-		mask = this.gameObject.transform.GetChild(1);
-		maskCenterPos = mask.localPosition;
 	}
 
 	// Update is called once per frame
@@ -39,14 +37,16 @@ public class BathroomTaskController : MonoBehaviour
 		if (acc > goal) {
             if (!isFinished)
             {
-				cutdown.addCount();
+				countdown.addCount();
 				isFinished = true;
+				Destroy(this);
 			}
-			Debug.Log("Success");
 		}
 		else {
-			mask.transform.localScale = new Vector3(1-acc / goal, 1, 1);
-			mask.transform.localPosition = new Vector3(maskCenterPos.x - 1.67f * (1 - acc / goal), maskCenterPos.y, maskCenterPos.z);
+			progressBar.updateBar(acc / goal);
+			if (sprite != null) {
+				sprite.color = new Color(1, 1, 1, 1 - acc / goal);
+			}
 		}
 	}
 	protected virtual void OnMouseDrag()

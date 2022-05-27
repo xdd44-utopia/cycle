@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class NewbornController : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class NewbornController : MonoBehaviour
 		}
 		if (videoPlayer.frame > 1880) {
 			circleAnime.SetBool("Trigger2", true);
+		}
+		if ((int)videoPlayer.frame > (int)videoPlayer.frameCount - 10) {
+			videoPlayer.Pause();
+			SceneManager.LoadScene(sceneName:"Whale");
 		}
 	}
 

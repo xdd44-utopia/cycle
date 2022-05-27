@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HumanSubSceneSwitch : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class HumanSubSceneSwitch : MonoBehaviour
 	public int startScene;
 	private int currentScene;
 	private int targetScene;
-	private bool isDay3 = false;
+	private int dayCount = 0;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -51,7 +52,8 @@ public class HumanSubSceneSwitch : MonoBehaviour
 					blind.color = new Color(0, 0, 0, 1);
 					timer = 0;
 					status = Status.FadeIn;
-					GameObject replaced = Instantiate(isDay3 ? day3Prefab[currentScene] : day2Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+					Debug.Log("Day: " + dayCount);
+					GameObject replaced = Instantiate(dayCount == 1 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
 					Destroy(scenes[currentScene].gameObject);
 					scenes[currentScene] = replaced.transform;
 					currentScene = targetScene;
@@ -68,16 +70,18 @@ public class HumanSubSceneSwitch : MonoBehaviour
 		timer = 0;
 		targetScene = x;
 		status = Status.FadeOut;
-		switch(x) {
-			case 4: {
-				scenes[4].gameObject.GetComponent<Animator>().SetTrigger("Trigger");
-				break;
+		if (currentScene == 5) {
+			if (dayCount < 2) {
+				dayCount++;
+			}
+			else {
+				SceneManager.LoadScene(sceneName:"Bird");
 			}
 		}
 	}
 	public void switchSceneWithoutFade(int x) {
 		targetScene = x;
-		GameObject replaced = Instantiate(isDay3 ? day3Prefab[currentScene] : day2Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+		GameObject replaced = Instantiate(dayCount == 1 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
 		Destroy(scenes[currentScene].gameObject);
 		scenes[currentScene] = replaced.transform;
 		currentScene = targetScene;

@@ -8460,7 +8460,7 @@ SpriteRenderer:
   m_Size: {x: 2.74, y: 3.69}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &418954695
@@ -18781,7 +18781,7 @@ MonoBehaviour:
   - {fileID: 671827032}
   - {fileID: 1370660581}
   foodCollector: {fileID: 1652785866}
-  startScene: 3
+  startScene: 0
 --- !u!1 &632466987
 GameObject:
   m_ObjectHideFlags: 0

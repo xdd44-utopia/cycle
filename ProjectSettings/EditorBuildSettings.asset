@@ -12,15 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Human.unity
     guid: df0cc838b4c4642d592b1cba7ee7775f
   - enabled: 1
+    path: Assets/Scenes/Bird.unity
+    guid: c0f0c981b754f430dbafd595739b3006
+  - enabled: 1
     path: Assets/Scenes/Elephant1.unity
     guid: 759485aeef07b4c0fa01574b054c4fc2
   - enabled: 1
     path: Assets/Scenes/Elephant2.unity
     guid: a060c37822b1f49cf859c88e09952ad1
   - enabled: 1
-    path: Assets/Scenes/whale.unity
+    path: Assets/Scenes/Whale.unity
     guid: 568d7f249eb9d440d994a813002878e2
-  - enabled: 1
-    path: Assets/Scenes/Bird.unity
-    guid: c0f0c981b754f430dbafd595739b3006
   m_configObjects: {}

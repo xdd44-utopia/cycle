@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneBehavior : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class SceneBehavior : MonoBehaviour
 			deactivateRecursive(this.gameObject);
 			if (nextScene != null) {
 				nextScene.activate();
+			}
+			else {
+				SceneManager.LoadScene(sceneName:"StartUp");
 			}
 		}
 		if (activated && Camera.main.orthographicSize != cameraSize) {

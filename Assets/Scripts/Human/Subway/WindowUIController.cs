@@ -31,6 +31,7 @@ public class WindowUIController : MonoBehaviour
 			nextWindow.activate();
 		}
 		if (isLastOne) {
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().playClip(-1);
 			Camera.main.GetComponent<HumanSubSceneSwitch>().switchScene(4);
 		}
 		Destroy(this);

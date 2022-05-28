@@ -778,6 +778,7 @@ GameObject:
   - component: {fileID: 1729203118607552248}
   - component: {fileID: 1729203118607552199}
   - component: {fileID: 1729203118607552198}
+  - component: {fileID: 1797020715}
   m_Layer: 0
   m_Name: WX
   m_TagString: Untagged
@@ -832,6 +833,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automateTime: 2
+--- !u!114 &1797020715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729203118607552249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729203118642505172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1610,7 @@ GameObject:
   - component: {fileID: 1729203118843586380}
   - component: {fileID: 1729203118843586378}
   - component: {fileID: 1729203118843586379}
+  - component: {fileID: 1226953185}
   m_Layer: 0
   m_Name: "\u63D0\u9192\u4E8B\u9879"
   m_TagString: Untagged
@@ -1656,6 +1670,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1226953185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729203118843586381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729203118883343489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1775,7 @@ GameObject:
   - component: {fileID: 1729203118895864759}
   - component: {fileID: 1729203118895864758}
   - component: {fileID: 1729203118895864757}
+  - component: {fileID: 1792817580}
   m_Layer: 0
   m_Name: "\u670B\u53CB\u5708"
   m_TagString: Untagged
@@ -1808,6 +1835,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automateTime: -1
+--- !u!114 &1792817580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729203118895864744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729203118898866735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,6 +1959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729203118922632330}
   - component: {fileID: 1729203118922632329}
+  - component: {fileID: 812557310}
   m_Layer: 0
   m_Name: EmptyWindow1
   m_TagString: Untagged
@@ -1961,6 +2001,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &812557310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729203118922632331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729203118979057817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,6 +2310,7 @@ GameObject:
   - component: {fileID: 1729203119500952184}
   - component: {fileID: 1729203119500952134}
   - component: {fileID: 1729203119500952135}
+  - component: {fileID: 266248765}
   m_Layer: 0
   m_Name: mail
   m_TagString: Untagged
@@ -2316,6 +2369,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automateTime: -1
+--- !u!114 &266248765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729203119500952185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729203119509687693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,6 +2917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729203119963469796}
   - component: {fileID: 1729203119963469795}
+  - component: {fileID: 1235552073}
   m_Layer: 0
   m_Name: EmptyWindow2
   m_TagString: Untagged
@@ -2893,6 +2959,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1235552073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729203119963469797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729203119970479924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,6 +2981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729203119970479923}
   - component: {fileID: 1729203119970479922}
+  - component: {fileID: 2019405639}
   m_Layer: 0
   m_Name: "\u5730\u94C1"
   m_TagString: Untagged
@@ -2975,6 +3054,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2019405639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729203119970479924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f76b8f421d743c9bf0f91ff33e715b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioID: 15
 --- !u!1 &1729203119985203947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,6 +3212,7 @@ GameObject:
   - component: {fileID: 1729203120102072401}
   - component: {fileID: 1729203120102072400}
   - component: {fileID: 1729203120102072415}
+  - component: {fileID: 106240920}
   m_Layer: 0
   m_Name: WB
   m_TagString: Untagged
@@ -3174,6 +3267,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automateTime: -1
+--- !u!114 &106240920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729203120102072402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729203120115222800
 GameObject:
   m_ObjectHideFlags: 0

@@ -5640,7 +5640,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0ac12d53c2caf406f89fd769f13df936, type: 3}
   - {fileID: 8300000, guid: 766c9b3ab73f448139edf725bad8b5a0, type: 3}
   - {fileID: 8300000, guid: bd798becd12e04049957c3c89a9547c9, type: 3}
-  isLoop: 000000000000000000000000000001
+  - {fileID: 8300000, guid: fe9aacfa157ff4bed89f4a8707772f64, type: 3}
+  - {fileID: 8300000, guid: df35c61a38f4942c4946ed6ffb158bf6, type: 3}
+  - {fileID: 8300000, guid: f9448334c8cf54e1180443cf19730637, type: 3}
+  isLoop: 000000000000000000000000000001010001
   playOnStartUp: 0
 --- !u!4 &841089369
 Transform:
@@ -14987,18 +14990,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1436510802178410135, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 841089368}
-    - target: {fileID: 1436510802437318219, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 841089368}
-    - target: {fileID: 1436510802780420716, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 841089368}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
 --- !u!1001 &1729203119507312359

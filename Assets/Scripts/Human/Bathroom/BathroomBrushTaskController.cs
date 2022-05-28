@@ -9,7 +9,6 @@ public class BathroomBrushTaskController : MonoBehaviour
 	public Texture2D texture;
 	public Countdown countdown;
 	public ProgressBar progressBar;
-	public AudioManager audioManager;
 	public int audioID;
 	public float audioLength;
 	private float audioTimer = 0;
@@ -44,7 +43,7 @@ public class BathroomBrushTaskController : MonoBehaviour
 			timer += Time.deltaTime;
 			if (timer > 0.1f) {
 				isMoving = false;
-				audioManager.pauseClip(audioID);
+				GameObject.Find("AudioManager").GetComponent<AudioManager>().pauseClip(audioID);
 				audioTimer = audioLength + 1;
 			}
 		}
@@ -90,7 +89,7 @@ public class BathroomBrushTaskController : MonoBehaviour
 		}
 		if (audioTimer > audioLength) {
 			audioTimer = 0;
-			audioManager.playClip(audioID);
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().playClip(audioID);
 		}
 		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		int x = (int)((mousePosition - mask.transform.position).x * mask.sprite.pixelsPerUnit / transform.localScale.x + maskWidth / 2f);

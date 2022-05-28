@@ -12,7 +12,6 @@ public class BathroomTaskController : MonoBehaviour
 	public ProgressBar progressBar;
 	public Countdown countdown;
 	public SpriteRenderer sprite;
-	public AudioManager audioManager;
 	public int audioID;
 	public float audioLength;
 	private float audioTimer = 0;
@@ -37,7 +36,7 @@ public class BathroomTaskController : MonoBehaviour
 			timer += Time.deltaTime;
 			if (timer > 0.1f) {
 				isMoving = false;
-				audioManager.pauseClip(audioID);
+				GameObject.Find("AudioManager").GetComponent<AudioManager>().pauseClip(audioID);
 				audioTimer = audioLength + 1;
 			}
 		}
@@ -72,7 +71,7 @@ public class BathroomTaskController : MonoBehaviour
 			if (deltapos.magnitude > threshold && angle > MinAngle && angle < MaxAngle) {
 				if (audioTimer > audioLength) {
 					audioTimer = 0;
-					audioManager.playClip(audioID);
+					GameObject.Find("AudioManager").GetComponent<AudioManager>().playClip(audioID);
 				}
 				isMoving = true;
 				timer = 0;

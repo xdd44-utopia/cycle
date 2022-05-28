@@ -1197,13 +1197,13 @@ AnimationClip:
       value: {fileID: 21300000, guid: cc26a0be93c9644aabbfa916361edac4, type: 3}
     - time: 27.4
       value: {fileID: 21300000, guid: d389bb7c4511f4cd68e2eb7b2183ba31, type: 3}
-    - time: 27.45
+    - time: 27.466667
       value: {fileID: 21300000, guid: 8602e4fa71f0e4409938a4fc58e9c8d2, type: 3}
-    - time: 27.5
+    - time: 27.516666
       value: {fileID: 21300000, guid: a3dc7e6ffa2444865aff3e0eb33b67a1, type: 3}
-    - time: 27.55
+    - time: 27.566668
       value: {fileID: 21300000, guid: fa06e37ded07f49fcb7f777f998ab2ea, type: 3}
-    - time: 27.6
+    - time: 27.616667
       value: {fileID: 21300000, guid: ea001bb944b8347fd88bec357c2241a1, type: 3}
     - time: 27.65
       value: {fileID: 21300000, guid: 4a736a208d73e40ceb73828befe75019, type: 3}
@@ -1996,4 +1996,25 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: playAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 27.916666
+    functionName: playAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: -1
+    messageOptions: 0
+  - time: 27.966667
+    functionName: playAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 7
+    messageOptions: 0

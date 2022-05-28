@@ -660,6 +660,54 @@ Transform:
   m_Father: {fileID: 1644717884}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &58570548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58570550}
+  - component: {fileID: 58570549}
+  m_Layer: 0
+  m_Name: AudioManagerBGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &58570549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58570548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1d48f098a8c4a148207fdf825a8109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 21f501c1153ca45e58d2ac37a964fe37, type: 3}
+  - {fileID: 8300000, guid: 8a37a3690980244ef8c21d19b46d20f6, type: 3}
+  isLoop: 0101
+  playOnStartUp: 0
+--- !u!4 &58570550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58570548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &91336935
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +1018,7 @@ GameObject:
   - component: {fileID: 140840498}
   - component: {fileID: 140840499}
   - component: {fileID: 140840500}
+  - component: {fileID: 140840501}
   m_Layer: 0
   m_Name: phase2-1
   m_TagString: Untagged
@@ -1030,6 +1079,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: {fileID: 626579054}
+--- !u!114 &140840501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140840497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &144005405
 GameObject:
   m_ObjectHideFlags: 0
@@ -13782,6 +13843,7 @@ GameObject:
   - component: {fileID: 535527326}
   - component: {fileID: 535527325}
   - component: {fileID: 535527327}
+  - component: {fileID: 535527328}
   m_Layer: 0
   m_Name: Bird A
   m_TagString: Untagged
@@ -13873,6 +13935,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &535527328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535527324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &562275816
 GameObject:
   m_ObjectHideFlags: 0
@@ -18765,6 +18839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c287d955c962a71419ad1e79c8955b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmManager: {fileID: 58570549}
   pos:
   - {x: -13.53, y: 0, z: -10}
   - {x: 0.66, y: 0, z: -10}
@@ -25811,6 +25886,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: {fileID: 626579054}
+--- !u!1 &1370937042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370937044}
+  - component: {fileID: 1370937043}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1370937043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370937042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1d48f098a8c4a148207fdf825a8109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 1b432f83e9c13439b8f7e680ce97d47a, type: 3}
+  - {fileID: 8300000, guid: 6012a876956874025b3b6605fbe33049, type: 3}
+  - {fileID: 8300000, guid: 9e3f995427bdd40e29241a35692bcf4e, type: 3}
+  - {fileID: 8300000, guid: 7b35ce125f34b45a8898fab93f9abf0a, type: 3}
+  - {fileID: 8300000, guid: 73e9387e555a34eff99de6978529bf11, type: 3}
+  - {fileID: 8300000, guid: 3a39f56913ed8437886667c477fe6557, type: 3}
+  - {fileID: 8300000, guid: d0f46d925d49a4a33bd488db3d28e747, type: 3}
+  - {fileID: 8300000, guid: 90db26414b9c84683bafd98428d1d2df, type: 3}
+  isLoop: 0100000000000000
+  playOnStartUp: 1
+--- !u!4 &1370937044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370937042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417703290
 GameObject:
   m_ObjectHideFlags: 0
@@ -32581,6 +32710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f17f44229684d99b74d258b63d47b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 1370937043}
   scene: {fileID: 626579054}
   sprites:
   - {fileID: 21300000, guid: 3a9bac506fc544f60aafc925a8d76095, type: 3}
@@ -34423,6 +34553,7 @@ GameObject:
   - component: {fileID: 2013702296}
   - component: {fileID: 2013702295}
   - component: {fileID: 2013702297}
+  - component: {fileID: 2013702298}
   m_Layer: 0
   m_Name: Bird B
   m_TagString: Untagged
@@ -34514,6 +34645,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2013702298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013702294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfc5e5415b546baabfca90b47c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2020860133
 GameObject:
   m_ObjectHideFlags: 0

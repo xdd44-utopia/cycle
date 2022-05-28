@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FoodCollector : MonoBehaviour
 {
+	public AudioManager audioManager;
 	public BirdSubSceneSwitch scene;
 	public Sprite[] sprites;
 	public SpriteRenderer[] starvings1;
@@ -64,6 +65,7 @@ public class FoodCollector : MonoBehaviour
 	public void feed() {
 		count--;
 		fed++;
+		audioManager.playClip(6);
 		if (count == 0) {
 			scene.nextScene();
 		}

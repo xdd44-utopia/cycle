@@ -39,6 +39,7 @@ public class AudioManager : MonoBehaviour
 		if (isSwitching) {
 			timer += Time.deltaTime * 0.5f;
 			sources[cur].volume = (1 - timer) * Settings.volume;
+			// Debug.Log(cur + " " + nex + " " + sources[cur].volume);
 			if (nex >= 0) {
 				sources[nex].volume = timer * Settings.volume;
 			}

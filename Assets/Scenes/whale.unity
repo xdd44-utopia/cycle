@@ -42914,6 +42914,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 34e9eeebc7f19d440b3fdd516d94c9cd, type: 3}
   - {fileID: 8300000, guid: c37cd1bbda08aa244bfd67b853de5f22, type: 3}
   - {fileID: 8300000, guid: 57fef3a2b67874840bd1580711a65274, type: 3}
+  isLoop: 010101
+  playOnStartUp: 1
 --- !u!4 &1387057819
 Transform:
   m_ObjectHideFlags: 0

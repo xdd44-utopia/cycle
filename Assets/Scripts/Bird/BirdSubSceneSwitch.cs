@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BirdSubSceneSwitch : MonoBehaviour
 {
+	public AudioManager bgmManager;
 	public Vector3[] pos;
 	public Animator birdA;
 	public Animator birdB;
@@ -34,7 +35,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if ((transform.position - targetPos).magnitude > 0.1f) {
+		if ((transform.position - targetPos).magnitude > 0.25f) {
 			switch (status) {
 				case Status.Still: {
 					speed = Vector3.zero;
@@ -73,6 +74,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 			switch (target) {
 				case 2: {
 					if (!nestTriggered) {
+						bgmManager.playClip(0);
 						nestTriggered = true;
 						Debug.Log("trigger");
 						nests[0].SetTrigger("Trigger");
@@ -81,6 +83,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 				}
 				case 3: {
 					if (!nestTriggered) {
+						bgmManager.playClip(0);
 						nestTriggered = true;
 						foodCollector.isCollecting = false;
 						maxSpeed = 5f;
@@ -90,6 +93,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 				}
 				case 4: {
 					if (!nestTriggered) {
+						bgmManager.playClip(0);
 						nestTriggered = true;
 						foodCollector.isCollecting = false;
 						maxSpeed = 5f;
@@ -99,6 +103,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 				}
 				case 5: {
 					if (!nestTriggered) {
+						bgmManager.playClip(0);
 						nestTriggered = true;
 						foodCollector.isCollecting = false;
 						maxSpeed = 5f;
@@ -139,6 +144,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 				break;
 			}
 			case 3: {
+				bgmManager.playClip(1);
 				birdA.SetTrigger("Trigger");
 				maxSpeed = 2.5f;
 				foodCollector.isCollecting = true;
@@ -146,6 +152,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 				break;
 			}
 			case 4: {
+				bgmManager.playClip(1);
 				birdA.SetTrigger("Trigger");
 				maxSpeed = 2.5f;
 				foodCollector.isCollecting = true;
@@ -154,6 +161,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 				break;
 			}
 			case 5: {
+				bgmManager.playClip(1);
 				birdA.SetTrigger("Trigger");
 				maxSpeed = 2.5f;
 				foodCollector.isCollecting = true;

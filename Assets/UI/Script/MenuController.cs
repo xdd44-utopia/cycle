@@ -34,6 +34,10 @@ public class MenuController : MonoBehaviour
 		SceneManager.LoadScene(sceneName:"Human");
 	}
 
+	public void backToMain() {
+		SceneManager.LoadScene(sceneName:"StartUp");
+	}
+
 	public void switchFullscreen() {
 		if (isFullscreen) {
 			Screen.fullScreenMode = FullScreenMode.Windowed;

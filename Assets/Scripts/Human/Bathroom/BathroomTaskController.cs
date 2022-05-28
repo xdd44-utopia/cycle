@@ -54,7 +54,7 @@ public class BathroomTaskController : MonoBehaviour
 			return;
 		}
 		Vector3 deltapos = Vector3.zero;
-		if ((Input.mousePosition - preMousepos).magnitude > 5) {
+		if ((Input.mousePosition - preMousepos).magnitude > 2) {
 			deltapos = Input.mousePosition - preMousepos;
 		}
 		preMousepos = Input.mousePosition;

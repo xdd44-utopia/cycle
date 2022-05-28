@@ -38,8 +38,8 @@ public class ExcelTask2 : MonoBehaviour
 			blueCur[i] = blueCur[i] == 4 ? 0 : blueCur[i];
 			blackCur[i] = blackCur[i] == -1 ? 3 : blackCur[i];
 			blackCur[i] = blackCur[i] == 4 ? 0 : blackCur[i];
-			blues[i].localPosition = new Vector3(blues[i].localPosition.x, yPos[blueCur[i]], 0);
-			blacks[i].localPosition = new Vector3(blacks[i].localPosition.x, yPos[blackCur[i]], 0);
+			blues[i].localPosition = new Vector3(blues[i].localPosition.x, yPos[blueCur[i]] + 0.15f, 0);
+			blacks[i].localPosition = new Vector3(blacks[i].localPosition.x, yPos[blackCur[i]] - 0.15f, 0);
 		}
 	}
 

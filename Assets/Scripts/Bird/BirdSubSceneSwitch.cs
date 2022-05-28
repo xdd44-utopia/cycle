@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
 public class BirdSubSceneSwitch : MonoBehaviour
@@ -11,6 +12,8 @@ public class BirdSubSceneSwitch : MonoBehaviour
 	public Animator birdB;
 	public Animator[] nests;
 	public FoodCollector foodCollector;
+	public VideoPlayer videoPlayer;
+	public MeshRenderer videoRenderer;
 	private bool nestTriggered = false;
 	public int startScene;
 	private enum Status {
@@ -30,6 +33,9 @@ public class BirdSubSceneSwitch : MonoBehaviour
 	void Start()
 	{
 		switchScene(startScene);
+		videoPlayer.frame = 2;
+		videoPlayer.Pause();
+		videoRenderer.enabled = false;
 	}
 
 	// Update is called once per frame
@@ -112,10 +118,18 @@ public class BirdSubSceneSwitch : MonoBehaviour
 					break;
 				}
 				case 6: {
-					SceneManager.LoadScene(sceneName:"Elephant1");
+					if (!videoRenderer.enabled) {
+						videoRenderer.enabled = true;
+						videoPlayer.Play();
+					}
 					break;
 				}
 			}
+		}
+		if ((int)videoPlayer.frame > (int)videoPlayer.frameCount - 5) {
+			videoPlayer.Pause();
+			SceneManager.LoadScene(sceneName:"Elephant1");
+			Destroy(this);
 		}
 	}
 	public void switchScene(int x) {

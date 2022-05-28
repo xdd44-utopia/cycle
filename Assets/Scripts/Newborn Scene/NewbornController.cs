@@ -44,12 +44,17 @@ public class NewbornController : MonoBehaviour
 				videoPlayer.Pause();
 			}
 		}
-		if (videoPlayer.frame > 1200 && !isSwitched) {
+		if (videoPlayer.frame > 1200 && videoPlayer.frame <= 1880 && !isSwitched) {
 			isSwitched = true;
 			audioManager.playClip(3);
 		}
 		if (videoPlayer.frame > 1880) {
+			isSwitched = false;
 			circleAnime.SetBool("Trigger2", true);
+		}
+		if (videoPlayer.frame > 4050 && !isSwitched) {
+			isSwitched = true;
+			audioManager.playClip(-1);
 		}
 		if ((int)videoPlayer.frame > (int)videoPlayer.frameCount - 10) {
 			videoPlayer.Pause();

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SceneBehavior : MonoBehaviour
 {
@@ -28,7 +27,7 @@ public class SceneBehavior : MonoBehaviour
 				nextScene.activate();
 			}
 			else {
-				SceneManager.LoadScene(sceneName:"StartUp");
+				Camera.main.gameObject.GetComponent<CameraController>().endScene();
 			}
 		}
 		if (activated && Camera.main.orthographicSize != cameraSize) {

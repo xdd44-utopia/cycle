@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 	public bool playOnStartUp;
 	private AudioSource[] sources;
 	private float timer;
-	private bool isSwitching;
+	private bool isSwitching = false;
 	private int cur = 0;
 	private int nex = 0;
 	// Start is called before the first frame update
@@ -38,27 +38,52 @@ public class AudioManager : MonoBehaviour
 	{
 		if (isSwitching) {
 			timer += Time.deltaTime * 0.5f;
-			sources[cur].volume = 1 - timer;
-			sources[nex].volume = timer;
+			sources[cur].volume = (1 - timer) * Settings.volume;
+			if (nex >= 0) {
+				sources[nex].volume = timer * Settings.volume;
+			}
 			if (timer > 1) {
 				timer = 1;
 				isSwitching = false;
 				if (nex != cur) {
 					sources[cur].Pause();
 				}
-				cur = nex;
+				cur = nex >= 0 ? nex : 0;
 			}
 		}
 	}
 
 	public void playClip(int x) {
-		if (x < 0 || x >= sources.Length) {
+		if (x >= sources.Length) {
 			return;
 		}
-		nex = x;
-		isSwitching = true;
-		timer = 0;
-		sources[nex].Play(0);
+		if (x >= 0) {
+			sources[x].Play(0);
+			if (isLoop[x]) {
+				if (isSwitching) {
+					if (nex != cur) {
+						sources[cur].Pause();
+					}
+					cur = nex >= 0 ? nex : 0;
+				}
+				nex = x;
+				isSwitching = true;
+				timer = 0;
+				sources[x].volume = 0;
+			}
+			else {
+				sources[x].volume = Settings.volume;
+			}
+		}
+		else if (isLoop[cur]) {
+			isSwitching = true;
+			timer = 0;
+			nex = -1;
+		}
+	}
+
+	public void pauseClip(int x) {
+		sources[x].Pause();
 	}
 
 }

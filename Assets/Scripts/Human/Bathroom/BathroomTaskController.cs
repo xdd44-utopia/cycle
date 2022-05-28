@@ -12,6 +12,10 @@ public class BathroomTaskController : MonoBehaviour
 	public ProgressBar progressBar;
 	public Countdown countdown;
 	public SpriteRenderer sprite;
+	public AudioManager audioManager;
+	public int audioID;
+	public float audioLength;
+	private float audioTimer = 0;
 	private float acc;
 	private Vector3 preMousepos;
 	private bool isMoving;
@@ -22,6 +26,7 @@ public class BathroomTaskController : MonoBehaviour
 	{
 		isFinished = false;
 		isMoving = false;
+		audioTimer = audioLength + 1;
 	}
 
 	// Update is called once per frame
@@ -32,6 +37,8 @@ public class BathroomTaskController : MonoBehaviour
 			timer += Time.deltaTime;
 			if (timer > 0.1f) {
 				isMoving = false;
+				audioManager.pauseClip(audioID);
+				audioTimer = audioLength + 1;
 			}
 		}
 		if (acc > goal) {
@@ -48,13 +55,14 @@ public class BathroomTaskController : MonoBehaviour
 				sprite.color = new Color(1, 1, 1, 1 - acc / goal);
 			}
 		}
+		audioTimer += Time.deltaTime;
 	}
 	private void OnMouseDrag() {
 		if (EventSystem.current.IsPointerOverGameObject()) {
 			return;
 		}
 		Vector3 deltapos = Vector3.zero;
-		if ((Input.mousePosition - preMousepos).magnitude > 2) {
+		if ((Input.mousePosition - preMousepos).magnitude > 1) {
 			deltapos = Input.mousePosition - preMousepos;
 		}
 		preMousepos = Input.mousePosition;
@@ -62,6 +70,10 @@ public class BathroomTaskController : MonoBehaviour
 			float angle = Mathf.Atan(Mathf.Abs(deltapos.y) / Mathf.Abs(deltapos.x));
 			angle = angle * 180 / Mathf.PI;
 			if (deltapos.magnitude > threshold && angle > MinAngle && angle < MaxAngle) {
+				if (audioTimer > audioLength) {
+					audioTimer = 0;
+					audioManager.playClip(audioID);
+				}
 				isMoving = true;
 				timer = 0;
 			}

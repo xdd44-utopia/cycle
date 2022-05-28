@@ -9,12 +9,18 @@ public class BathroomBrushTaskController : MonoBehaviour
 	public Texture2D texture;
 	public Countdown countdown;
 	public ProgressBar progressBar;
+	public AudioManager audioManager;
+	public int audioID;
+	public float audioLength;
+	private float audioTimer = 0;
 	private SpriteMask mask;
 	private Color[] colors;
 	private int maskWidth;
 	private int maskHeight;
 	private int acc = 0;
 	private int goal = 0;
+	private bool isMoving;
+	private float timer = 0;
 
 	void Start() 
 	{
@@ -30,14 +36,24 @@ public class BathroomBrushTaskController : MonoBehaviour
 				goal++;
 			}
 		}
+		audioTimer = audioLength + 1;
 	}
 
 	void Update() {
+		if (isMoving) {
+			timer += Time.deltaTime;
+			if (timer > 0.1f) {
+				isMoving = false;
+				audioManager.pauseClip(audioID);
+				audioTimer = audioLength + 1;
+			}
+		}
 		progressBar.updateBar(acc / (goal / 2f));
 		if (acc >= goal / 2) {
 			countdown.addCount();
 			Destroy(this.gameObject);
 		}
+		audioTimer += Time.deltaTime;
 	}
 	
 	private void DrawCircleOnMask(int cx, int cy, int r) {
@@ -72,10 +88,16 @@ public class BathroomBrushTaskController : MonoBehaviour
 		{
 			return;
 		}
+		if (audioTimer > audioLength) {
+			audioTimer = 0;
+			audioManager.playClip(audioID);
+		}
 		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		int x = (int)((mousePosition - mask.transform.position).x * mask.sprite.pixelsPerUnit / transform.localScale.x + maskWidth / 2f);
 		int y = (int)((mousePosition - mask.transform.position).y * mask.sprite.pixelsPerUnit / transform.localScale.y + maskHeight / 2f);
 		DrawCircleOnMask(x, y, 50);
+		isMoving = true;
+		timer = 0;
 	}
 
 }

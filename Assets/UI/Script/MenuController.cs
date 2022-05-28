@@ -16,7 +16,11 @@ public class MenuController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		Settings.volume = 1;
+		if (!Settings.initiated) {
+			Settings.volume = 1;
+			Settings.initiated = true;
+		}
+		volumeChange();
 	}
 
 	// Update is called once per frame

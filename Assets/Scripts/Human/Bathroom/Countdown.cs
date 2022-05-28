@@ -7,17 +7,18 @@ public class Countdown : MonoBehaviour
 	public int beforeSceneNum;
 	public int nextSceneNum;
 	public float totalTime;
+	public Transform mask;
+	private float empty;
 	private HumanSubSceneSwitch controller;
 	private int goal = 3;
 	private int count = 0;
 	private float timer;
-	private Transform mask;
 	private Vector3 maskCenterPos;
 	// Start is called before the first frame update
 	void Start()
 	{
 		timer = 0;
-		mask = this.gameObject.transform.GetChild(1);
+		empty = mask.localPosition.x;
 		maskCenterPos = mask.localPosition;
 	}
 
@@ -35,13 +36,12 @@ public class Countdown : MonoBehaviour
 			Destroy(this);
 		}
 		if (totalTime < timer) {
+			Debug.Log("?");
 			controller.switchScene(beforeSceneNum);
 			Destroy(this);
 		}
-		else
-		{
-			mask.transform.localScale = new Vector3(1-timer / totalTime, 1, 1);
-			mask.transform.localPosition = new Vector3(maskCenterPos.x - 5.5f * (timer / totalTime), maskCenterPos.y, maskCenterPos.z);
+		else {
+			mask.localPosition = new Vector3(Mathf.Lerp(empty, 0, 1 - timer / totalTime), 0, 0);
 		}
 
 	}

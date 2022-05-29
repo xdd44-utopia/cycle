@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
 	private bool isSwitching = false;
 	private int cur = 0;
 	private int nex = 0;
+	private float prevVolume = 0;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -51,6 +52,14 @@ public class AudioManager : MonoBehaviour
 				}
 				cur = nex >= 0 ? nex : 0;
 			}
+		}
+		else if (prevVolume != Settings.volume) {
+			for (int i=0;i<sources.Length;i++) {
+				if (sources[i].volume > 0) {
+					sources[i].volume = Settings.volume;
+				}
+			}
+			prevVolume = Settings.volume;
 		}
 	}
 

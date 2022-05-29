@@ -2565,7 +2565,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 9d8ada02d02624303b926034a61f087c, type: 3}
-  isLoop: 01
+  - {fileID: 8300000, guid: 8259ae5c6e005438c8c95bcac23eba41, type: 3}
+  isLoop: 0100
   playOnStartUp: 1
 --- !u!4 &1147116348
 Transform:

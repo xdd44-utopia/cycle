@@ -5,66 +5,85 @@ using UnityEngine.EventSystems;
 
 public class BubbleController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Animator drink;
-    public SpriteRenderer Greenbg;
-    public SpriteRenderer Redbg;
-    public SpriteRenderer[] Icons;
-    public float MaxWaitTime;
-    public float GoalTime;
-    private float acc;
-    private float accSpeed=2;
-    private float decaySpeed=1;
-    void Start()
-    {
-        acc = 0;
-        int openIcon = Random.Range(0, 5);
-        for(int i = 0; i < 5; i++)
-        {
-            if (i == openIcon)
-            {
-                Icons[i].enabled = true;
-            }
-            else
-            {
-                Icons[i].enabled = false;
-            }
-        }
-    }
+	public SpriteRenderer[] Icons;
+	public float MaxWaitTime;
+	public float GoalTime;
+	public SpriteRenderer bubble;
+	private SpriteRenderer icon;
+	private float acc = 1;
+	private float accSpeed = 5;
+	private float decaySpeed = 2;
+	private Color redColor = new Color(255f / 255f, 71f / 255f, 85f / 255f, 1f);
+	private Color greenColor = new Color(96f / 255f, 187f / 255f, 153f / 255f, 1f);
+	private bool defeated = false;
+	private bool isMouseDown = false;
+	void Start()
+	{
+		int openIcon = Random.Range(0, 5);
+		for(int i = 0; i < 5; i++) {
+			if (i == openIcon) {
+				Icons[i].enabled = true;
+				icon = Icons[i];
+			}
+			else {
+				Destroy(Icons[i].gameObject);
+			}
+		}
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (acc > GoalTime)
-        {
-            
-            Debug.Log("success");
-            Destroy(this.gameObject);
-        }
-        else if(acc<-MaxWaitTime)
-        {
-            Debug.Log("Defeat");
-            transform.parent.gameObject.GetComponent<PeopleController>().change();
-            Destroy(this.gameObject);
-        }
-        else if(acc>0)
-        {
-            Redbg.color = new Color(1, 1, 1, 0);
-            Greenbg.color = new Color(1, 1, 1, acc / GoalTime);
-        }
-        else
-        {
-            Redbg.color = new Color(1, 1, 1, -acc/MaxWaitTime);
-            Greenbg.color = new Color(1, 1, 1, 0);
-        }
-        acc -= Time.deltaTime * decaySpeed;
-    }
-    private void OnMouseDrag()
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-        acc += Time.deltaTime*accSpeed;
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		if (isMouseDown) {
+			acc += Time.deltaTime * accSpeed;
+		}
+		if (acc > GoalTime) {
+			GetComponent<Animator>().SetTrigger("Trigger");
+		}
+		else if (acc < - MaxWaitTime && !defeated) {
+			defeated = true;
+			transform.parent.gameObject.GetComponent<PeopleController>().change();
+			GetComponent<Animator>().SetTrigger("Trigger");
+		}
+		else if (acc > 0) {
+			bubble.color = new Color(
+				Mathf.Lerp(redColor.r, greenColor.r, acc / GoalTime),
+				Mathf.Lerp(redColor.g, greenColor.g, acc / GoalTime),
+				Mathf.Lerp(redColor.b, greenColor.b, acc / GoalTime),
+				1
+			);
+			icon.color = new Color(1, 1, 1, 1);
+		}
+		else {
+			bubble.color = new Color(
+				redColor.r,
+				redColor.g,
+				redColor.b,
+				1 + acc / MaxWaitTime
+			);
+			icon.color = new Color(1, 1, 1, 1 + acc / MaxWaitTime);
+		}
+		acc -= Time.deltaTime * decaySpeed;
+	}
+	private void OnMouseDown() {
+		if (EventSystem.current.IsPointerOverGameObject() || defeated) {
+			return;
+		}
+		isMouseDown = true;
+	}
+	private void OnMouseUp() {
+		if (EventSystem.current.IsPointerOverGameObject() || defeated) {
+			return;
+		}
+		isMouseDown = false;
+	}
+	private void OnMouseExit() {
+		if (EventSystem.current.IsPointerOverGameObject() || defeated) {
+			return;
+		}
+		isMouseDown = false;
+	}
+	public void destroyThis() {
+		Destroy(this.gameObject);
+	}
 }

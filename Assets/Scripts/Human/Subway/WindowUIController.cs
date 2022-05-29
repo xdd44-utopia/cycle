@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class WindowUIController : MonoBehaviour
 {
 	public Animator[] anims;
-	public WindowController nextWindow;
+	public WindowController[] nextWindows;
 	public bool isLastOne;
 	void OnMouseDown() {
 		if (EventSystem.current.IsPointerOverGameObject()) {
@@ -27,8 +27,10 @@ public class WindowUIController : MonoBehaviour
 				
 			}
 		}
-		if (nextWindow != null) {
-			nextWindow.activate();
+		if (nextWindows.Length > 0) {
+			for (int i=0;i<nextWindows.Length;i++) {
+				nextWindows[i].activate();
+			}
 		}
 		if (isLastOne) {
 			GameObject.Find("AudioManager").GetComponent<AudioManager>().playClip(-1);

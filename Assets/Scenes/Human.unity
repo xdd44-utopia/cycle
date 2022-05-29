@@ -283,6 +283,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1071322599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2617552915199786273, guid: 5e9c24fc9fd634897b6f1ce09ab62969, type: 3}
+  m_PrefabInstance: {fileID: 2617552917122725002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239063363
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239063363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 120, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1017084585}
@@ -386,10 +391,12 @@ MonoBehaviour:
   - {fileID: 2146163958}
   - {fileID: 2024185732}
   - {fileID: 581976206}
+  - {fileID: 1071322599}
   day2Prefab:
   - {fileID: 1165955886746611770, guid: 2f1f325d9ed559c449d0278bc512feab, type: 3}
   - {fileID: 3537651166300055803, guid: e8c57c3ee0e2b8f4282a3fe5d5415e97, type: 3}
   - {fileID: 1436510801781300509, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
+  - {fileID: 1729203118825902436, guid: b0e3b79d98d423441afcef9dd5c8106c, type: 3}
   - {fileID: 989911558827092788, guid: b88150c6e748e43b2be5a0f8bbcd770c, type: 3}
   - {fileID: 2617552915199786272, guid: 5e9c24fc9fd634897b6f1ce09ab62969, type: 3}
   day3Prefab:
@@ -400,7 +407,7 @@ MonoBehaviour:
   - {fileID: 7881034431437651856, guid: ccac43729f96c482ab3c87432fcdb54c, type: 3}
   - {fileID: 8321113332177871720, guid: d6fe0a080cf5e47f583302a902ab1f47, type: 3}
   blind: {fileID: 1017084586}
-  startScene: 3
+  startScene: 0
 --- !u!1001 &1749840085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,10 +621,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1Bedroom
       objectReference: {fileID: 0}
-    - target: {fileID: 1165955886746611770, guid: 2f1f325d9ed559c449d0278bc512feab, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1165955886746611771, guid: 2f1f325d9ed559c449d0278bc512feab, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -674,10 +677,6 @@ PrefabInstance:
     - target: {fileID: 1436510801781300509, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
       propertyPath: m_Name
       value: 2Bathroom2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436510801781300509, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1436510801781300510, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
       propertyPath: m_RootOrder
@@ -793,10 +792,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 5Night
       objectReference: {fileID: 0}
-    - target: {fileID: 2617552915199786272, guid: 5e9c24fc9fd634897b6f1ce09ab62969, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2617552915199786273, guid: 5e9c24fc9fd634897b6f1ce09ab62969, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -898,10 +893,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2Bathroom1
       objectReference: {fileID: 0}
-    - target: {fileID: 3537651166300055803, guid: e8c57c3ee0e2b8f4282a3fe5d5415e97, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c57c3ee0e2b8f4282a3fe5d5415e97, type: 3}
 --- !u!1001 &6994760657778244245
@@ -958,10 +949,6 @@ PrefabInstance:
     - target: {fileID: 6994760657317711654, guid: 83ed186ae6d4d422486c1ea0925a6425, type: 3}
       propertyPath: m_Name
       value: 4Office1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6994760657317711654, guid: 83ed186ae6d4d422486c1ea0925a6425, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83ed186ae6d4d422486c1ea0925a6425, type: 3}

@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beforeSceneNum: 1
   nextSceneNum: 3
-  totalTime: 10
+  totalTime: 60
   mask: {fileID: 1436510802891096957}
 --- !u!1 &1436510801500306022
 GameObject:

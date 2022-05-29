@@ -86,14 +86,14 @@ public class AudioManager : MonoBehaviour
 			}
 		}
 		else if (isLoop[cur]) {
-			isSwitching = true;
-			timer = 0;
-			nex = -1;
+			sources[cur].Pause();
+			sources[cur].volume = 0;
 		}
 	}
 
 	public void pauseClip(int x) {
 		sources[x].Pause();
+		sources[x].volume = 0;
 	}
 
 }

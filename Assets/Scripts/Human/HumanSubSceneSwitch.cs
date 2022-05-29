@@ -25,7 +25,7 @@ public class HumanSubSceneSwitch : MonoBehaviour
 	void Start()
 	{
 		currentScene = 0;
-		if (startScene >= 0) {
+		if (startScene > 0) {
 			switchScene(startScene);
 		}
 	}
@@ -52,10 +52,13 @@ public class HumanSubSceneSwitch : MonoBehaviour
 					blind.color = new Color(0, 0, 0, 1);
 					timer = 0;
 					status = Status.FadeIn;
-					Debug.Log("Day: " + dayCount);
-					GameObject replaced = Instantiate(dayCount == 1 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+					// Debug.Log("Day: " + dayCount + " " + currentScene);
+					GameObject replaced = null;
 					Destroy(scenes[currentScene].gameObject);
-					scenes[currentScene] = replaced.transform;
+					if (currentScene > 0) {
+						replaced = Instantiate(dayCount == 1 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+						scenes[currentScene] = replaced.transform;
+					}
 					currentScene = targetScene;
 					transform.position = new Vector3(scenes[targetScene].position.x, scenes[targetScene].position.y, -10);
 				}
@@ -81,9 +84,11 @@ public class HumanSubSceneSwitch : MonoBehaviour
 	}
 	public void switchSceneWithoutFade(int x) {
 		targetScene = x;
-		GameObject replaced = Instantiate(dayCount == 1 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
 		Destroy(scenes[currentScene].gameObject);
-		scenes[currentScene] = replaced.transform;
+		if (currentScene > 0) {
+			GameObject replaced = Instantiate(dayCount == 1 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+			scenes[currentScene] = replaced.transform;
+		}
 		currentScene = targetScene;
 		transform.position = new Vector3(scenes[targetScene].position.x, scenes[targetScene].position.y, -10);
 	}

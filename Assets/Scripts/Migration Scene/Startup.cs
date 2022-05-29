@@ -8,16 +8,20 @@ public class Startup : MonoBehaviour
 	public AudioManager audioManager2;
 	private VideoPlayer videoPlayer;
 	public GameObject firstArc;
+	private bool isStarted = false;
 	// Start is called before the first frame update
 	void Start()
 	{
 		videoPlayer = GetComponent<VideoPlayer>();
-		audioManager2.playClip(0);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		if (!isStarted) {
+			isStarted = true;
+			audioManager2.playClip(0);
+		}
 		if (videoPlayer.frame > (long)(videoPlayer.frameCount - 5)) {
 			animFinished();
 		}

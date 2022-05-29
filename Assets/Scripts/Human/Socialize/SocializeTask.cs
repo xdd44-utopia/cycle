@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SocializeTask : MonoBehaviour
 {
-    public GameObject[] people;
+    public PeopleController[] people;
     private bool isFinished;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class SocializeTask : MonoBehaviour
         isFinished = true;
         for(int i = 0; i < 4; i++)
         {
-            if (!people[i].GetComponent<PeopleController>().isFruit)
+            if (!people[i].isFruit)
             {
                 isFinished = false;
                 break;

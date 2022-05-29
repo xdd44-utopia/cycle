@@ -5,6 +5,7 @@ using UnityEngine;
 public class PeopleController : MonoBehaviour
 {
     public Vector3 bubblePoint;
+    [HideInInspector]
     public bool isFruit;
     private GameObject bubble;
     public GameObject bubblePrefab;

@@ -13,7 +13,7 @@ public class AnimationBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown("r")) {
+		if (Mathf.Abs(Camera.main.transform.position.y - transform.position.y) < 10 && Input.GetKeyDown("r")) {
 			animator.SetTrigger("Trigger");
 		}
 	}

@@ -7,6 +7,7 @@ public class PaintSubTask : MonoBehaviour
 {
 	public bool isFixed;
 	public Vector3 target;
+	public float angle;
 	public PaintMasterTask task;
 	private bool isReached = false;
 	private Animator anim;
@@ -25,7 +26,9 @@ public class PaintSubTask : MonoBehaviour
 			Destroy(this.gameObject);
 		}
 		if (target.magnitude != 0 && (transform.localPosition - target).magnitude < 1) {
-			transform.localPosition = Vector3.Lerp(transform.localPosition, target, 0.5f);
+			isFixed = true;
+			transform.localPosition = Vector3.Lerp(transform.localPosition, target, 0.1f);
+			transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(angle > 0 ? transform.rotation.eulerAngles.z : transform.rotation.eulerAngles.z - 360, angle, 0.1f));
 			if (!isReached) {
 				isReached = true;
 				task.addCount();

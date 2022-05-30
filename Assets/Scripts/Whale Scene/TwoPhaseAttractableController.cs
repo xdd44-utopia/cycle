@@ -7,7 +7,7 @@ public class TwoPhaseAttractableController : AttractableController
 	public int automateTime;
 	private float timer = 0;
 	private GameObject attracting;
-	private const float attractDist = 5f;
+	private const float attractDist = 2f;
 	private bool hasAttracted = false;
 	protected override void Start() {
 		base.Start();

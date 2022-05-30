@@ -17,8 +17,12 @@ public class PaintTask : MonoBehaviour
 	void Update()
 	{
 		if (transform.childCount == targetCount) {
-			targetAnim.SetTrigger("Trigger");
-			stickAnim.SetTrigger("Trigger");
+			if (targetAnim != null) {
+				targetAnim.SetTrigger("Trigger");
+			}
+			if (stickAnim != null) {
+				stickAnim.SetTrigger("Trigger");
+			}
 			targetCollider.enabled = true;
 			Destroy(this);
 		}

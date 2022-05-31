@@ -34,7 +34,7 @@ public class WordTask : MonoBehaviour
 	};
 	private int[,] ans = new int[4, 5] {
 		{1, 2, 3, 3, 4},
-		{2, 1, 4, 3, 2},
+		{2, 1, 4, 2, 1},
 		{3, 3, 3, 3, 4},
 		{1, 2, 1, 2, 2}
 	};
@@ -82,7 +82,6 @@ public class WordTask : MonoBehaviour
 		selectorAnim.SetTrigger("Close");
 		formCollider.enabled = false;
 		formCollider.enabled = true;
-		Debug.Log(curX + " " + curY + " " + c);
 		boxes[curX, curY].GetComponent<SpriteRenderer>().sprite = boxSprites[c];
 		cur[curX, curY] = c;
 		testResult();
@@ -92,6 +91,7 @@ public class WordTask : MonoBehaviour
 		for (int i=0;i<4;i++) {
 			for (int j=0;j<5;j++) {
 				if (cur[i, j] != ans[i, j]) {
+					Debug.Log(i + " " + j + " " + cur[i, j] + " " + ans[i, j]);
 					return;
 				}
 			}

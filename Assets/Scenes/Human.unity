@@ -482,7 +482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239063363}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dea0c3c34a1974005a6b8fc5b32fe763, type: 3}
   m_Name: 
@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1Bedroom
       objectReference: {fileID: 0}
+    - target: {fileID: 1165955886746611770, guid: 2f1f325d9ed559c449d0278bc512feab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1165955886746611771, guid: 2f1f325d9ed559c449d0278bc512feab, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -779,6 +783,10 @@ PrefabInstance:
     - target: {fileID: 1436510801781300509, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
       propertyPath: m_Name
       value: 2Bathroom2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436510801781300509, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1436510801781300510, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
       propertyPath: m_RootOrder
@@ -1003,6 +1011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2Bathroom1
       objectReference: {fileID: 0}
+    - target: {fileID: 3537651166300055803, guid: e8c57c3ee0e2b8f4282a3fe5d5415e97, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c57c3ee0e2b8f4282a3fe5d5415e97, type: 3}
 --- !u!1001 &6994760657778244245
@@ -1059,6 +1071,10 @@ PrefabInstance:
     - target: {fileID: 6994760657317711654, guid: 83ed186ae6d4d422486c1ea0925a6425, type: 3}
       propertyPath: m_Name
       value: 4Office1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994760657317711654, guid: 83ed186ae6d4d422486c1ea0925a6425, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83ed186ae6d4d422486c1ea0925a6425, type: 3}

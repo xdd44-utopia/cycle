@@ -482,7 +482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239063363}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dea0c3c34a1974005a6b8fc5b32fe763, type: 3}
   m_Name: 
@@ -783,10 +783,6 @@ PrefabInstance:
     - target: {fileID: 1436510801781300509, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
       propertyPath: m_Name
       value: 2Bathroom2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436510801781300509, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1436510801781300510, guid: 11546b38cab28444899ace81d123a1b4, type: 3}
       propertyPath: m_RootOrder

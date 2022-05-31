@@ -52,13 +52,16 @@ public class HumanSubSceneSwitch : MonoBehaviour
 					blind.color = new Color(0, 0, 0, 1);
 					timer = 0;
 					status = Status.FadeIn;
-					// Debug.Log("Day: " + dayCount + " " + currentScene);
+					Debug.Log("Day: " + dayCount + " " + currentScene);
 					GameObject replaced = null;
 					Destroy(scenes[currentScene].gameObject);
 					if (currentScene > 0) {
 						Debug.Log(dayCount);
 						replaced = Instantiate(dayCount == 0 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
 						scenes[currentScene] = replaced.transform;
+						if (currentScene == 5) {
+							dayCount++;
+						}
 					}
 					currentScene = targetScene;
 					transform.position = new Vector3(scenes[targetScene].position.x, scenes[targetScene].position.y, -10);
@@ -77,13 +80,8 @@ public class HumanSubSceneSwitch : MonoBehaviour
 		timer = 0;
 		targetScene = x;
 		status = Status.FadeOut;
-		if (currentScene == 5) {
-			if (dayCount < 2) {
-				dayCount++;
-			}
-			else {
-				SceneManager.LoadScene(sceneName:"Bird");
-			}
+		if (currentScene == 5 && dayCount == 2) {
+			SceneManager.LoadScene(sceneName:"Bird");
 		}
 	}
 	public void switchSceneWithoutFade(int x) {

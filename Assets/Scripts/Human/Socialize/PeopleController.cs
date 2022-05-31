@@ -21,13 +21,11 @@ public class PeopleController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (bubble == null) {
-			if (currentTime > 0)
-			{
+		if (bubble == null && Mathf.Abs(Camera.main.transform.position.y - transform.position.y) < 10) {
+			if (currentTime > 0) {
 				currentTime -= Time.deltaTime;
 			}
-			else
-			{
+			else {
 				currentTime = gapTime;
 				bubble = Instantiate(bubblePrefab, transform.position+bubblePoint, Quaternion.identity, transform);
 			}

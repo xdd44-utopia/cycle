@@ -12,7 +12,7 @@ public class BubbleController : MonoBehaviour
 	private SpriteRenderer icon;
 	private float acc = 1;
 	private float accSpeed = 5;
-	private float decaySpeed = 2;
+	private float decaySpeed = 1.5f;
 	private Color redColor = new Color(255f / 255f, 71f / 255f, 85f / 255f, 1f);
 	private Color greenColor = new Color(96f / 255f, 187f / 255f, 153f / 255f, 1f);
 	private bool defeated = false;

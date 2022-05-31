@@ -8,10 +8,8 @@ public class ExcelTask2 : MonoBehaviour
 	public float[] yPos;
 	public Transform[] blues;
 	public Transform[] blacks;
-	// private int[] blueCur = new int[5]{2, 2, 2, 2, 2};
-	// private int[] blackCur = new int[5]{1, 1, 1, 1, 1};
-	private int[] blueCur = new int[5]{1, 2, 1, 3, 2};
-	private int[] blackCur = new int[5]{0, 0, 2, 1, 1};
+	private int[] blueCur = new int[5]{2, 2, 2, 2, 2};
+	private int[] blackCur = new int[5]{1, 1, 1, 1, 1};
 	private int[] blueAns = new int[5]{1, 2, 2, 3, 2};
 	private int[] blackAns = new int[5]{0, 0, 1, 1, 1};
 	// Start is called before the first frame update

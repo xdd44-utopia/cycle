@@ -27,10 +27,10 @@ public class SceneBehavior : MonoBehaviour
 				nextScene.activate();
 			}
 			else {
-				activated = false;
 				audioManager.playClip(-1);
 				Camera.main.gameObject.GetComponent<CameraController>().endScene();
 			}
+			Destroy(this);
 		}
 		if (activated && Camera.main.orthographicSize != cameraSize) {
 			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, cameraSize, 0.01f);

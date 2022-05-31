@@ -36,9 +36,9 @@ public class CameraController : MonoBehaviour
 	void Update()
 	{
 		if (isSceneEnd) {
+			transform.position = new Vector3(100, 0, 0);
+			cam.orthographicSize = 5.4f;
 			if (!videoRenderer.enabled) {
-				transform.position = new Vector3(100, 0, 0);
-				cam.orthographicSize = 5.4f;
 				videoRenderer.enabled = true;
 				videoPlayer.Play();
 			}

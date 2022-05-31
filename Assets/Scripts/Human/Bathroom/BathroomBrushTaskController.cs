@@ -48,8 +48,8 @@ public class BathroomBrushTaskController : MonoBehaviour
 				audioTimer = audioLength + 1;
 			}
 		}
-		progressBar.updateBar(acc / (goal / 2f));
-		if (acc >= goal / 2f) {
+		progressBar.updateBar(acc / (goal / 3f));
+		if (acc >= goal / 3f) {
 			countdown.addCount();
 			Destroy(this);
 		}

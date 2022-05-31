@@ -9,7 +9,7 @@ public class WormController : MonoBehaviour
 	private SpriteRenderer sprite;
 	private bool activated;
 	private float timer;
-	private const float appearTime = 3;
+	private const float appearTime = 2;
 	// Start is called before the first frame update
 	void Start()
 	{

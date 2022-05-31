@@ -23,7 +23,7 @@ public class DiamondController : MonoBehaviour
 	{
 		if (transform.position.x - Camera.main.transform.position.x < 7.5f && !done) {
 			diamondAnim.SetTrigger("Trigger");
-			pick = Random.Range(0, 7);
+			pick = Random.Range(1, 8);
 			insectAnim.SetInteger("Type", pick);
 			done = true;
 		}

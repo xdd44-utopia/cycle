@@ -56,7 +56,8 @@ public class HumanSubSceneSwitch : MonoBehaviour
 					GameObject replaced = null;
 					Destroy(scenes[currentScene].gameObject);
 					if (currentScene > 0) {
-						replaced = Instantiate(dayCount == 1 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+						Debug.Log(dayCount);
+						replaced = Instantiate(dayCount == 0 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
 						scenes[currentScene] = replaced.transform;
 					}
 					currentScene = targetScene;
@@ -70,6 +71,9 @@ public class HumanSubSceneSwitch : MonoBehaviour
 		}
 	}
 	public void switchScene(int x) {
+		if (x == 3 && dayCount > 0) {
+			x++;
+		}
 		timer = 0;
 		targetScene = x;
 		status = Status.FadeOut;
@@ -83,10 +87,14 @@ public class HumanSubSceneSwitch : MonoBehaviour
 		}
 	}
 	public void switchSceneWithoutFade(int x) {
+		if (x == 3 && dayCount > 0) {
+			x++;
+		}
 		targetScene = x;
 		Destroy(scenes[currentScene].gameObject);
 		if (currentScene > 0) {
-			GameObject replaced = Instantiate(dayCount == 1 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
+			Debug.Log(dayCount);
+			GameObject replaced = Instantiate(dayCount == 0 ? day2Prefab[currentScene] : day3Prefab[currentScene], scenes[currentScene].position, scenes[currentScene].localRotation);
 			scenes[currentScene] = replaced.transform;
 		}
 		currentScene = targetScene;

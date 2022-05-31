@@ -18820,7 +18820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626579050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.46, y: 0, z: -10}
+  m_LocalPosition: {x: -13, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1347707324}
@@ -18848,7 +18848,7 @@ MonoBehaviour:
   - {x: 114.2, y: 0, z: -10}
   - {x: 194.2, y: 0, z: -10}
   - {x: 274.2, y: 0, z: -10}
-  - {x: 300, y: 0, z: -10}
+  - {x: 274.2, y: 0, z: -10}
   birdA: {fileID: 535527327}
   birdB: {fileID: 2013702297}
   nests:
@@ -22539,6 +22539,7 @@ GameObject:
   - component: {fileID: 935653858}
   - component: {fileID: 935653856}
   - component: {fileID: 935653857}
+  - component: {fileID: 935653859}
   m_Layer: 0
   m_Name: Video Player
   m_TagString: Untagged
@@ -22644,6 +22645,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935653854}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!210 &935653859
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935653854}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 20
 --- !u!1 &940044039
 GameObject:
   m_ObjectHideFlags: 0

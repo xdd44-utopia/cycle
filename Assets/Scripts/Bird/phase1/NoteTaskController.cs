@@ -35,7 +35,7 @@ public class NoteTaskController : MonoBehaviour
 		};
 		tasks[0] = new List<int>() {0};
 		tasks[1] = new List<int>() {1, 0, 2};
-		tasks[2] = new List<int>() {4, 4, 4, 4, 4, 4};
+		tasks[2] = new List<int>() {6, 4, 5, 3, 4, 5};
 	}
 
 	// Update is called once per frame

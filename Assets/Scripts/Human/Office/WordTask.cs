@@ -20,24 +20,25 @@ public class WordTask : MonoBehaviour
 	private float intHorizontal;
 	private int curX = 0;
 	private int curY = 0;
-	private int[,] cur = new int[4, 5] {
-		{1, 2, 3, 3, 4},
-		{2, 1, 4, 3, 2},
-		{3, 3, 3, 3, 4},
-		{0, 0, 0, 0, 0}
-	};
 	// private int[,] cur = new int[4, 5] {
-	// 	{0, 0, 0, 0, 0},
-	// 	{0, 0, 0, 0, 0},
-	// 	{0, 0, 0, 0, 0},
+	// 	{1, 2, 3, 3, 4},
+	// 	{2, 1, 4, 3, 2},
+	// 	{3, 3, 3, 3, 4},
 	// 	{0, 0, 0, 0, 0}
 	// };
+	private int[,] cur = new int[4, 5] {
+		{1, 2, 3, 3, 4},
+		{0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0}
+	};
 	private int[,] ans = new int[4, 5] {
 		{1, 2, 3, 3, 4},
 		{2, 1, 4, 3, 2},
 		{3, 3, 3, 3, 4},
 		{1, 2, 1, 2, 2}
-	}; 
+	};
+	public bool isEnabled;
 	void Start()
 	{
 		formCollider = GetComponent<Collider2D>();
@@ -59,7 +60,7 @@ public class WordTask : MonoBehaviour
 	}
 
 	void OnMouseDown() {
-		if (EventSystem.current.IsPointerOverGameObject() || selectorTransform.localScale.magnitude > 0) {
+		if (EventSystem.current.IsPointerOverGameObject() || selectorTransform.localScale.magnitude > 0 || !isEnabled) {
 			return;
 		}
 		Vector3 currentScenePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
@@ -74,7 +75,7 @@ public class WordTask : MonoBehaviour
 		formCollider.enabled = false;
 		curX = x;
 		curY = y;
-		selectorTransform.localPosition = new Vector3(localPosition.x, localPosition.y, 0);
+		selectorTransform.localPosition = new Vector3(localPosition.x, localPosition.y, -0.01f);
 	}
 
 	public void select(int c) {

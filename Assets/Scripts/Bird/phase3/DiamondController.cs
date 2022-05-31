@@ -21,7 +21,7 @@ public class DiamondController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (transform.position.x - Camera.main.transform.position.x < 25 && !done) {
+		if (transform.position.x - Camera.main.transform.position.x < 7.5f && !done) {
 			diamondAnim.SetTrigger("Trigger");
 			pick = Random.Range(0, 7);
 			insectAnim.SetInteger("Type", pick);

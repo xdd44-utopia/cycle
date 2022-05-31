@@ -18,7 +18,8 @@ public class BathroomBrushTaskController : MonoBehaviour
 	private int maskHeight;
 	private int acc = 0;
 	private int goal = 0;
-	private bool isMoving;
+	private bool isMoving = false;
+	private bool isValid = false;
 	private float timer = 0;
 
 	void Start() 
@@ -47,10 +48,10 @@ public class BathroomBrushTaskController : MonoBehaviour
 				audioTimer = audioLength + 1;
 			}
 		}
-		progressBar.updateBar(acc / (goal / 2f));
+		progressBar.updateBar(acc / (goal / 2));
 		if (acc >= goal / 2) {
 			countdown.addCount();
-			Destroy(this.gameObject);
+			Destroy(this);
 		}
 		audioTimer += Time.deltaTime;
 	}
@@ -87,16 +88,26 @@ public class BathroomBrushTaskController : MonoBehaviour
 		{
 			return;
 		}
-		if (audioTimer > audioLength) {
-			audioTimer = 0;
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().playClip(audioID);
+		if (isValid) {
+			Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			int x = (int)((mousePosition - mask.transform.position).x * mask.sprite.pixelsPerUnit / transform.localScale.x + maskWidth / 2f);
+			int y = (int)((mousePosition - mask.transform.position).y * mask.sprite.pixelsPerUnit / transform.localScale.y + maskHeight / 2f);
+			DrawCircleOnMask(x, y, 50);
+			isMoving = true;
+			timer = 0;
+			if (audioTimer > audioLength) {
+				audioTimer = 0;
+				GameObject.Find("AudioManager").GetComponent<AudioManager>().playClip(audioID);
+			}
 		}
-		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		int x = (int)((mousePosition - mask.transform.position).x * mask.sprite.pixelsPerUnit / transform.localScale.x + maskWidth / 2f);
-		int y = (int)((mousePosition - mask.transform.position).y * mask.sprite.pixelsPerUnit / transform.localScale.y + maskHeight / 2f);
-		DrawCircleOnMask(x, y, 50);
-		isMoving = true;
-		timer = 0;
+	}
+
+	void OnMouseEnter() {
+		isValid = true;
+	}
+
+	void OnMouseExit() {
+		isValid = false;
 	}
 
 }

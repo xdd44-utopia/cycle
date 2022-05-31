@@ -66,7 +66,8 @@ public class FoodCollector : MonoBehaviour
 		count--;
 		fed++;
 		audioManager.playClip(6);
-		if (count == 0) {
+		if (count <= 0) {
+			count = 0;
 			scene.nextScene();
 		}
 	}

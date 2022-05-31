@@ -82,7 +82,6 @@ public class BirdSubSceneSwitch : MonoBehaviour
 					if (!nestTriggered) {
 						bgmManager.playClip(0);
 						nestTriggered = true;
-						Debug.Log("trigger");
 						nests[0].SetTrigger("Trigger");
 					}
 					break;
@@ -159,6 +158,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 			}
 			case 3: {
 				bgmManager.playClip(1);
+				Debug.Log("Trigger");
 				birdA.SetTrigger("Trigger");
 				maxSpeed = 2.5f;
 				foodCollector.isCollecting = true;
@@ -167,6 +167,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 			}
 			case 4: {
 				bgmManager.playClip(1);
+				Debug.Log("Trigger");
 				birdA.SetTrigger("Trigger");
 				maxSpeed = 2.5f;
 				foodCollector.isCollecting = true;
@@ -176,6 +177,7 @@ public class BirdSubSceneSwitch : MonoBehaviour
 			}
 			case 5: {
 				bgmManager.playClip(1);
+				Debug.Log("Trigger");
 				birdA.SetTrigger("Trigger");
 				maxSpeed = 2.5f;
 				foodCollector.isCollecting = true;

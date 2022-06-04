@@ -10,8 +10,8 @@ public class ExcelTask2 : MonoBehaviour
 	public Transform[] blacks;
 	private int[] blueCur = new int[5]{2, 2, 2, 2, 2};
 	private int[] blackCur = new int[5]{1, 1, 1, 1, 1};
-	private int[] blueAns = new int[5]{1, 2, 2, 3, 2};
-	private int[] blackAns = new int[5]{0, 0, 1, 1, 1};
+	public int[] blueAns;
+	public int[] blackAns;
 	// Start is called before the first frame update
 	void Start()
 	{

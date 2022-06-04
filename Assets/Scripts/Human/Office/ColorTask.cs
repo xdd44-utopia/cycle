@@ -19,6 +19,7 @@ public class ColorTask : MonoBehaviour
 		{true, true, false, true, false, true, false, true, false, false, false},
 		{false, false, true, false, false, false, false, false, true, false, false}
 	};
+	private int[] selectLimit = new int[3]{2, 3, 4};
 	private bool[,,] ans = new bool[3, 4, 11] {
 		{
 			{false, false, false, false, false, false, false, false, true, false, true},
@@ -33,7 +34,7 @@ public class ColorTask : MonoBehaviour
 			{false, false, false, false, false, false, false, false, true, false, false}
 		},
 		{
-			{false, false, false, false, false, false, false, false, false, false, false},
+			{false, false, false, false, false, false, false, true, false, false, false},
 			{false, false, false, false, false, false, false, false, false, true, true},
 			{true, false, false, false, false, false, false, false, false, false, false},
 			{false, false, false, false, false, false, false, false, false, false, false}
@@ -48,10 +49,10 @@ public class ColorTask : MonoBehaviour
 				if (clickable[i, j]) {
 					boxes[i, j] = Instantiate(boxPrefab, transform);
 					boxes[i, j].transform.localPosition = new Vector3(Mathf.Lerp(leftBound, rightBound, j / 10f), Mathf.Lerp(upperBound, lowerBound, i / 3f), 0);
-					boxes[i, j].SetActive(false);
 				}
 			}
 		}
+		clearInput();
 	}
 
 	// Update is called once per frame
@@ -70,7 +71,12 @@ public class ColorTask : MonoBehaviour
 		int x = (int)Mathf.Floor((upperBound + intv / 2 - localPosition.y) / intv);
 		int y = (int)Mathf.Floor((localPosition.x - (leftBound - intv / 2)) / intv);
 		if (clickable[x, y]) {
-			boxes[x, y].SetActive(!boxes[x, y].activeSelf);
+			if (boxes[x, y].activeSelf) {
+				boxes[x, y].SetActive(false);
+			}
+			else if (countInput() < selectLimit[cur]) {
+				boxes[x, y].SetActive(true);
+			}
 		}
 		else if (x >= 2 && y >= 9) {
 			testResult();
@@ -88,6 +94,29 @@ public class ColorTask : MonoBehaviour
 		}
 		scene.SetTrigger("Trigger");
 		cur++;
+		clearInput();
+	}
+
+	private void clearInput() {
+		for (int i=0;i<4;i++) {
+			for (int j=0;j<11;j++) {
+				if (clickable[i, j]) {
+					boxes[i, j].SetActive(false);
+				}
+			}
+		}
+	}
+
+	private int countInput() {
+		int ret = 0;
+		for (int i=0;i<4;i++) {
+			for (int j=0;j<11;j++) {
+				if (clickable[i, j] && boxes[i, j].activeSelf) {
+					ret++;
+				}
+			}
+		}
+		return ret;
 	}
 
 }

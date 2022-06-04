@@ -1396,13 +1396,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165955887051138782}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.017, y: -2.974, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5, w: 0.8660254}
+  m_LocalPosition: {x: -6.008617, y: -3.012003, z: 0}
+  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 1}
   m_Children: []
   m_Father: {fileID: 1165955888224308129}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
 --- !u!212 &1165955887051138783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachCollider: {fileID: 6020275580184484160}
   attachTarget: {fileID: 1165955888390219734}
-  goalAngle: 310
+  goalAngle: 306.3
 --- !u!95 &1165955887051138772
 Animator:
   serializedVersion: 3
@@ -2424,7 +2424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFixed: 0
-  target: {x: -2.49, y: -1.16, z: 0}
+  target: {x: -2.515, y: -1.181, z: 0}
   angle: 126
   task: {fileID: 1165955888166614259}
 --- !u!114 &1165955887672143417
@@ -2672,8 +2672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFixed: 0
-  target: {x: 2.9, y: 1.28, z: 0}
-  angle: -90
+  target: {x: 2.983, y: 1.222, z: 0}
+  angle: -110.9
   task: {fileID: 1165955888166614259}
 --- !u!114 &1165955887698229118
 MonoBehaviour:
@@ -3128,8 +3128,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1165955887051138768}
   - {fileID: 1165955888390219734}
+  - {fileID: 1165955887051138768}
   m_Father: {fileID: 1165955888166614256}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3429,8 +3429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFixed: 0
-  target: {x: 0.96, y: 3.57, z: 0}
-  angle: -18
+  target: {x: 0.931, y: 3.538, z: 0}
+  angle: -16.5
   task: {fileID: 1165955888166614259}
 --- !u!60 &4509500885874144729
 PolygonCollider2D:
@@ -3563,12 +3563,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165955888390219732}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.372, y: -3.178, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.323, y: -3.12, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1165955888224308129}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1165955888390219733
 SpriteRenderer:
@@ -3665,8 +3665,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFixed: 0
-  target: {x: 0.96, y: -2.36, z: 0}
-  angle: 188
+  target: {x: 0.984, y: -2.321, z: 0}
+  angle: 191
   task: {fileID: 1165955888166614259}
 --- !u!60 &6020275580184484160
 PolygonCollider2D:

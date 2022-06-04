@@ -18,9 +18,12 @@ public class phase3AnimalController : MonoBehaviour
 	private const float speed = 0.9f;
 	private const float maxSpeed = 5f;
 	private const float maxDir = 60f;
+
+	private float zTest;
 	// Start is called before the first frame update
 	void Start()
 	{
+		zTest = Random.Range(-0.01f, 0.01f);
 		anime = GetComponent<Animator>();
 	}
 
@@ -36,6 +39,8 @@ public class phase3AnimalController : MonoBehaviour
 		if (isDeactivated && !isSeaanemone) {
 			transform.position += new Vector3(0, 0.1f, 0);
 		}
+
+		transform.position = new Vector3(transform.position.x, transform.position.y, zTest);
 	}
 	private void move()
 	{

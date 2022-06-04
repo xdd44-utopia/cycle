@@ -23,10 +23,11 @@ public class AttractableController : MonoBehaviour
 	private const float maxSpeed = 5f;
 	protected bool attractable;
 	public SceneBehavior scene;
+	private float zTest;
 	// Start is called before the first frame update
 	protected virtual void Start()
 	{
-
+		zTest = Random.Range(-0.01f, 0.01f);
 		if (transform.childCount == 3) {
 			GameObject attracting = transform.GetChild(2).gameObject;
 			attracting.GetComponent<AttractingController>().setTarget(this);
@@ -112,7 +113,7 @@ public class AttractableController : MonoBehaviour
 		else {
 			eatingTime -= Time.deltaTime;
 		}
-
+		transform.position = new Vector3(transform.position.x, transform.position.y, zTest);
 	}
 
 	private void adjustSprite() {

@@ -7,8 +7,8 @@ public class ExcelTask1 : MonoBehaviour
 	public Animator scene;
 	public SpriteRenderer[] upperSprites;
 	public SpriteRenderer[] lowerSprites;
-	private bool[] upperAnswer = new bool[5]{false, false, false, true, false};
-	private bool[] lowerAnswer = new bool[5]{false, false, true, true, true};
+	public bool[] upperAnswer;
+	public bool[] lowerAnswer;
 	// Start is called before the first frame update
 	void Start()
 	{

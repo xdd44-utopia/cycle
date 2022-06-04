@@ -68,7 +68,7 @@ public class WordTask : MonoBehaviour
 		Vector3 localPosition = currentWorldPosition - transform.position;
 		int x = (int)Mathf.Floor((upperBound + intVertical / 2 - localPosition.y) / intVertical);
 		int y = (int)Mathf.Floor((localPosition.x - (leftBound - intHorizontal / 2)) / intHorizontal);
-		if ((x == 0 && y == 0) || x > 3 || y > 4) {
+		if (x == 0 || x > 3 || y > 4) {
 			return;
 		}
 		selectorAnim.SetTrigger("Open");

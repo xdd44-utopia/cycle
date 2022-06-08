@@ -31,6 +31,7 @@ public class ExcelTask1 : MonoBehaviour
 			(!lowerSprites[4].enabled ^ lowerAnswer[4])
 		) {
 			scene.SetTrigger("Trigger");
+			GameObject.Find("LogController").GetComponent<LogController>().addLog("Excel bar task success");
 			Destroy(this);
 		}
 	}

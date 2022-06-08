@@ -97,6 +97,7 @@ public class WordTask : MonoBehaviour
 			}
 		}
 		scene.SetTrigger("Trigger");
+		GameObject.Find("LogController").GetComponent<LogController>().addLog("Word task success");
 		Destroy(this);
 	}
 }

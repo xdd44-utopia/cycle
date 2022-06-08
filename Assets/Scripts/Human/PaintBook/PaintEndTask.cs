@@ -19,5 +19,6 @@ public class PaintEndTask : MonoBehaviour
 	void OnMouseDown()
 	{
 		scene.SetTrigger("Trigger");
+		GameObject.Find("LogController").GetComponent<LogController>().addLog("Paintbook scene finishes");
 	}
 }

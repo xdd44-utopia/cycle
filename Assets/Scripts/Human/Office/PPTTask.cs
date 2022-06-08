@@ -10,6 +10,7 @@ public class PPTTask : MonoBehaviour
 	{
 		if (isCorrect()) {
 			scene.SetTrigger("Trigger");
+			GameObject.Find("LogController").GetComponent<LogController>().addLog("PPT task success");
 			Destroy(this);
 		}
 	}

@@ -77,6 +77,9 @@ public class ColorTask : MonoBehaviour
 			else if (countInput() < selectLimit[cur]) {
 				boxes[x, y].SetActive(true);
 			}
+			else {
+				GameObject.Find("LogController").GetComponent<LogController>().addLog("Exceeds, current: " + cur + " " + selectLimit[cur]);
+			}
 		}
 		else if (x >= 2 && y >= 9) {
 			testResult();
@@ -93,6 +96,7 @@ public class ColorTask : MonoBehaviour
 			}
 		}
 		scene.SetTrigger("Trigger");
+		GameObject.Find("LogController").GetComponent<LogController>().addLog("Color task success");
 		cur++;
 		clearInput();
 	}

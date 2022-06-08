@@ -22,6 +22,7 @@ public class WindowUIController : MonoBehaviour
 			}
 			try {
 				anims[i].SetTrigger("Trigger");
+				GameObject.Find("LogController").GetComponent<LogController>().addLog("Switched by subway window UI");
 			}
 			catch (NullReferenceException e) {
 				

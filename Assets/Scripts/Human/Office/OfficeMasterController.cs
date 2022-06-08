@@ -14,6 +14,7 @@ public class OfficeMasterController : MonoBehaviour
 	void Update() {
 		if (Mathf.Abs(Camera.main.transform.position.y - transform.position.y) < 10 && !started) {
 			anim.SetTrigger("Trigger");
+			GameObject.Find("LogController").GetComponent<LogController>().addLog("Scene start");
 			started = true;
 		}
 	}

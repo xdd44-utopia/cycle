@@ -11,6 +11,7 @@ public class WechatTrigger : MonoBehaviour
 			return;
 		}
 		scene.SetTrigger("Trigger");
+		GameObject.Find("LogController").GetComponent<LogController>().addLog("Wechat operation");
 		Destroy(this);
 	}
 }

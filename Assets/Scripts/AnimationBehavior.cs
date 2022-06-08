@@ -15,6 +15,7 @@ public class AnimationBehavior : MonoBehaviour
 	{
 		if (Mathf.Abs(Camera.main.transform.position.y - transform.position.y) < 10 && Input.GetKeyDown("r")) {
 			animator.SetTrigger("Trigger");
+			GameObject.Find("LogController").GetComponent<LogController>().addLog("Skipped by keyboard");
 		}
 	}
 

@@ -29,6 +29,7 @@ public class ExcelTask2 : MonoBehaviour
 			blueCur[4] == blueAns[4] && blackCur[4] == blackAns[4]
 		) {
 			scene.SetTrigger("Trigger");
+			GameObject.Find("LogController").GetComponent<LogController>().addLog("Excel point task success");
 			Destroy(this);
 		}
 		for (int i=0;i<5;i++) {

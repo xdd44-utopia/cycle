@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ColliderBehavior : MonoBehaviour
 {
+	public string colliderName;
 	public Animator anim;
 	// Start is called before the first frame update
 	void Start()
@@ -23,5 +24,6 @@ public class ColliderBehavior : MonoBehaviour
 			return;
 		}
 		anim.SetTrigger("Trigger");
+		GameObject.Find("LogController").GetComponent<LogController>().addLog("Switched by click on " + colliderName);
 	}
 }

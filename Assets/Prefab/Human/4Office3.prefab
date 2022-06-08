@@ -6964,6 +6964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82c32601eb4f9d43867086812145be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderName: Wechat preview
   anim: {fileID: 7881034431437651870}
 --- !u!1 &7881034431087781268
 GameObject:
@@ -7205,6 +7206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82c32601eb4f9d43867086812145be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderName: Wechat preview
   anim: {fileID: 7881034431437651870}
 --- !u!1 &7881034431105327788
 GameObject:
@@ -8788,6 +8790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82c32601eb4f9d43867086812145be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderName: Wechat preview
   anim: {fileID: 7881034431437651870}
 --- !u!1 &7881034431399648166
 GameObject:
@@ -13202,6 +13205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82c32601eb4f9d43867086812145be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderName: Mail window
   anim: {fileID: 7881034431437651870}
 --- !u!1 &7881034432044652818
 GameObject:
@@ -13464,6 +13468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82c32601eb4f9d43867086812145be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderName: Wechat send button
   anim: {fileID: 7881034431437651870}
 --- !u!1 &7881034432070933242
 GameObject:
